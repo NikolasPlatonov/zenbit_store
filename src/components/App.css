@@ -1,0 +1,19 @@
+.content {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  padding-left: 10%;
+}
+
+.header {
+  margin: 1em;
+}
+
+.products_container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.products_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

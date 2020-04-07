@@ -1,4 +1,5 @@
 import React from 'react';
+import s from './index.module.css';
 
 const data = [
   {
@@ -84,11 +85,23 @@ const data = [
 ];
 
 export const ProductList = () => {
-  return (
-    <div>
-      <div>Product</div>
-      <div>Component</div>
-    </div>
 
-  )
-}
+  const renderCards = (el) => {
+    return (
+      <div className={s.container}>
+        <div className={s.photo_container}>
+          <img alt="product_image" src={el.image} className={s.photo} />
+        </div>
+        <div className={s.name}>{el.name}</div>
+        <div className={s.price}>{el.price} USD</div>
+        <button
+          className={s.button}
+        >
+          ADD TO CART
+      </button>
+      </div>
+    )
+  }
+
+  return (data.map((el) => renderCards(el)));
+};

@@ -1,0 +1,36 @@
+.container {
+  margin: 1em;
+}
+
+.photo_container {
+  background-color: #ededed;
+  width: 8em;
+  height: 8em;
+}
+
+.photo {
+  width: 100%;
+}
+
+.name {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: lighter;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  height: 2em;
+}
+
+.origin {
+  font-style: inherit;
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.price {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: lighter;
+  color: green;
+  margin-bottom: 10px;
+}
