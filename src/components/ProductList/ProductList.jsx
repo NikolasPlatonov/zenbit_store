@@ -1,11 +1,11 @@
 import React from 'react';
-import {Product} from '../Product/Product';
+import {ProductCard} from '../ProductCard/ProductCard';
 
 
 export const ProductList = ({data}) => {
   return (data.map((product) => (
     <div key={product.id}>
-      <Product el={product} />
+      <ProductCard el={product} />
     </div>
   )
   ));

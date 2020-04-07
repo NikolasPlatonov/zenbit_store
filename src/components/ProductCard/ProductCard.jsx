@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import s from './Product.module.css';
+import s from './ProductCard.module.css';
 import ReactCardFlip from 'react-card-flip'
 import sold_out from '../../assets/images/sold-out.png'
+import {NavLink} from 'react-router-dom';
 
-export const Product = ({el}) => {
+export const ProductCard = ({el}) => {
   const [isFlipped, changeFlipped] = useState(false)
   const onChangeFlipped = () => {
     changeFlipped(!isFlipped)
@@ -13,12 +14,15 @@ export const Product = ({el}) => {
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
       <div className={s.container}>
         <div className={s.photo_container}>
-          <img alt="product_image" src={el.image} className={s.photo} onClick={onChangeFlipped} />
+          <NavLink to={`/product/` + el.id}>
+            <img alt="product_image" src={el.image} className={s.photo} />
+          </NavLink>
         </div>
         <div className={s.name}>{el.name}</div>
-        <div className={s.price}>{el.price} USD</div>
+        <div className={s.price} onClick={onChangeFlipped}>{el.price} USD</div>
         <button
           className={s.button}
+
         >
           ADD TO CART
         </button>
@@ -26,10 +30,10 @@ export const Product = ({el}) => {
 
       <div className={s.container}>
         <div className={s.photo_container}>
-          <img alt="sold_out" src={sold_out} className={s.photo} onClick={onChangeFlipped} />
+          <img alt="sold_out" src={sold_out} className={s.photo} />
         </div>
         <div className={s.name}>{el.name}</div>
-        <div className={s.price}>{el.price} USD</div>
+        <div className={s.price} onClick={onChangeFlipped}>{el.price} USD</div>
         <button
           className={s.button}
         >

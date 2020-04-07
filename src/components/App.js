@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { ProductDetails } from './ProductDetails/ProductDetails';
+import ProductDetails from './ProductDetails/ProductDetails';
 
 const data = [
   {
@@ -109,8 +109,8 @@ const App = () => {
                 render={() => <ProductList data={data} />}
               />
               <Route
-                path="/product"
-                render={() => <ProductDetails product={data[0]} />}
+                path="/product/:id"
+                render={() => <ProductDetails data={data} />}
               />
             </div>
           </div>
