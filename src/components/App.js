@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { ProductList } from 'components/ProductList';
+import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter } from 'react-router-dom';
 
 const App = () => {

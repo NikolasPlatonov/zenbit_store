@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './index.module.css';
+import {Product} from '../Product/Product';
 
 const data = [
   {
@@ -85,23 +85,10 @@ const data = [
 ];
 
 export const ProductList = () => {
-
-  const renderCards = (el) => {
-    return (
-      <div className={s.container}>
-        <div className={s.photo_container}>
-          <img alt="product_image" src={el.image} className={s.photo} />
-        </div>
-        <div className={s.name}>{el.name}</div>
-        <div className={s.price}>{el.price} USD</div>
-        <button
-          className={s.button}
-        >
-          ADD TO CART
-      </button>
-      </div>
-    )
-  }
-
-  return (data.map((el) => renderCards(el)));
+  return (data.map((product) => (
+    <div key={product.id}>
+      <Product el={product} />
+    </div>
+  )
+  ));
 };
