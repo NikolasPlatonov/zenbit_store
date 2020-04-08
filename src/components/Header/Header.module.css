@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 100px 50px 150px;
+}
+
+.cart img {
+  height: 40px;
+}
+
+.search {
+  text-align: left;
+}
+
+.input {
+  background-color: #ededed;
+  width: 50%;
+  height: 100%;
+  font-size: 17px;
+  padding-left: 10px;
+  border: 0px solid;
+  color: #5f7e96;
+  /* background-image: url('./../../assets/images/search.png'); */
+  background-repeat: no-repeat;
+  background-position: 95%;
+  background-size: 25px;
+}
+
+.shop a {
+  color: #5f7e96;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 30px;
+}
+
+.cart_count {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  color: #5f7e96;
+  font-weight: bold;
+}

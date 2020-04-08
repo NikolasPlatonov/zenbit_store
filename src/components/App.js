@@ -3,6 +3,8 @@ import './App.css';
 import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ProductDetails from './ProductDetails/ProductDetails';
+import { Header } from './Header/Header';
+import Cart from './Cart/Cart';
 
 const data = [
   {
@@ -100,18 +102,21 @@ const App = () => {
     <Router>
       <Switch>
         <div className="content">
-          <div className="header"></div>
+          <div className="header">
+            <Header />
+          </div>
           <div className="products_container">
             <div className="products_list">
               <Route
                 exact
-                path="/"
+                path="/products"
                 render={() => <ProductList data={data} />}
               />
               <Route
                 path="/product/:id"
                 render={() => <ProductDetails data={data} />}
               />
+              <Route path="/cart" render={() => <Cart />} />
             </div>
           </div>
         </div>
