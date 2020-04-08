@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { ProductList } from 'components/ProductList/ProductList';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import ProductDetails from './ProductDetails/ProductDetails';
 import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
@@ -99,23 +99,20 @@ const data = [
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [cartProductsCounter, changeCartProductsCounter] = useState([]);
+  const [cartCounter, setCartCounter] = useState(0);
 
   const addToCart = (product) => {
     const existingProduct = cart.filter((p) => p.id === product.id);
-
     if (existingProduct.length > 0) {
-      const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
       const updatedUnitsProduct = {
         ...existingProduct[0],
-        units: existingProduct[0].units + product.units,
+        units: existingProduct[0].units + 1,
       };
-
-      setCart([...withoutExistingProduct, updatedUnitsProduct]);
-      changeCartProductsCounter(cartProductsCounter + product.units);
+      setCart([updatedUnitsProduct]);
+      setCartCounter(cartCounter + 1);
     } else {
-      setCart([...cart, product]);
-      changeCartProductsCounter(cartProductsCounter + product.units);
+      setCart([...cart, { ...product, units: 1 }]);
+      setCartCounter(cartCounter + 1);
     }
   };
 
@@ -126,34 +123,30 @@ const App = () => {
 
   return (
     <Router>
-      <Switch>
-        <div className="content">
-          <div className="header">
-            <Header />
-          </div>
-          <div className="products_container">
-            <Route
-              path="/cart"
-              render={() => (
-                <Cart cart={cart} deleteFromCart={deleteFromCart} />
-              )}
-            />
-
-            <div className="products_list">
-              <Route
-                exact
-                path="/products"
-                render={() => <ProductList data={data} addToCart={addToCart} />}
-              />
-            </div>
-
-            <Route
-              path="/product/:id"
-              render={() => <ProductDetails data={data} />}
-            />
-          </div>
+      <div className="content">
+        <div className="header">
+          <Header cartCounter={cartCounter} />
         </div>
-      </Switch>
+        <div className="products_container">
+          <Route
+            path="/cart"
+            render={() => <Cart cart={cart} deleteFromCart={deleteFromCart} />}
+          />
+
+          <div className="products_list">
+            <Route
+              exact
+              path="/products"
+              render={() => <ProductList data={data} addToCart={addToCart} />}
+            />
+          </div>
+
+          <Route
+            path="/product/:id"
+            render={() => <ProductDetails data={data} />}
+          />
+        </div>
+      </div>
     </Router>
   );
 };

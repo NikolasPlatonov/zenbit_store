@@ -3,7 +3,7 @@ import s from './Header.module.css';
 import cart from './../../assets/images/shopping-cart.png';
 import { NavLink } from 'react-router-dom';
 
-export const Header = (props) => {
+export const Header = ({ cartCounter }) => {
   return (
     <div className={s.container}>
       <div className={s.search}>
@@ -30,7 +30,7 @@ export const Header = (props) => {
           <img alt="cart_icon" src={cart} />
         </NavLink>
       </div>
-      <div className={s.cart_count}>{props.count} products </div>
+      <div className={s.cart_count}>{cartCounter} products </div>
     </div>
   );
 };
