@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import s from './ProductCard.module.css';
-import ReactCardFlip from 'react-card-flip'
-import sold_out from '../../assets/images/sold-out.png'
-import {NavLink} from 'react-router-dom';
+import ReactCardFlip from 'react-card-flip';
+import sold_out from '../../assets/images/sold-out.png';
+import { NavLink } from 'react-router-dom';
 
-export const ProductCard = ({el}) => {
-  const [isFlipped, changeFlipped] = useState(false)
+export const ProductCard = ({ el, addToCart }) => {
+  const [isFlipped, changeFlipped] = useState(false);
   const onChangeFlipped = () => {
-    changeFlipped(!isFlipped)
-  }
+    changeFlipped(!isFlipped);
+  };
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
@@ -19,11 +19,10 @@ export const ProductCard = ({el}) => {
           </NavLink>
         </div>
         <div className={s.name}>{el.name}</div>
-        <div className={s.price} onClick={onChangeFlipped}>{el.price} USD</div>
-        <button
-          className={s.button}
-
-        >
+        <div className={s.price} onClick={onChangeFlipped}>
+          {el.price} USD
+        </div>
+        <button className={s.button} onClick={() => addToCart(el)}>
           ADD TO CART
         </button>
       </div>
@@ -33,13 +32,11 @@ export const ProductCard = ({el}) => {
           <img alt="sold_out" src={sold_out} className={s.photo} />
         </div>
         <div className={s.name}>{el.name}</div>
-        <div className={s.price} onClick={onChangeFlipped}>{el.price} USD</div>
-        <button
-          className={s.button}
-        >
-          ADD TO CART
-        </button>
+        <div className={s.price} onClick={onChangeFlipped}>
+          {el.price} USD
+        </div>
+        <button className={s.button}>ADD TO CART</button>
       </div>
     </ReactCardFlip>
-  )
-}
+  );
+};

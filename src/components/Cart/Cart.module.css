@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-rows: 50px 1fr 100px;
+}
+
+.title_container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  margin-left: 150px;
+  justify-items: center;
+}
+
+.btn_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: right;
+  margin-top: 50px;
+}
+
+/* next css file */
+
+.order_container {
+  display: grid;
+  grid-template-columns: 50px 100px 2fr repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.order_delete {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.order_photo img {
+  width: 50px;
+}
+
+.order_name {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.order_price {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: lighter;
+  color: green;
+}
+
+.order_quantity {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: lighter;
+}

@@ -14,15 +14,23 @@ export const Header = (props) => {
         />
       </div>
 
-      <div className={s.shop}>
-        <NavLink to="/products">SHOP</NavLink>
+      <div className={s.menu_container}>
+        <div className={s.menu_btn}>
+          <NavLink to="/products">SHOP</NavLink>
+        </div>
+        <div className={s.menu_btn}>
+          <NavLink to="/blog">BLOG</NavLink>
+        </div>
+        <div className={s.menu_btn}>
+          <NavLink to="/contacts">CONTACT US</NavLink>
+        </div>
       </div>
       <div className={s.cart}>
         <NavLink to="/cart">
           <img alt="cart_icon" src={cart} />
         </NavLink>
       </div>
-      <div className={s.cart_count}> {props.count} products</div>
+      <div className={s.cart_count}>{props.count} products </div>
     </div>
   );
 };

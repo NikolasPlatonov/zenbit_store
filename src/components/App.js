@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
@@ -98,6 +98,32 @@ const data = [
 ];
 
 const App = () => {
+  const [cart, setCart] = useState([]);
+  const [cartProductsCounter, changeCartProductsCounter] = useState([]);
+
+  const addToCart = (product) => {
+    const existingProduct = cart.filter((p) => p.id === product.id);
+
+    if (existingProduct.length > 0) {
+      const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
+      const updatedUnitsProduct = {
+        ...existingProduct[0],
+        units: existingProduct[0].units + product.units,
+      };
+
+      setCart([...withoutExistingProduct, updatedUnitsProduct]);
+      changeCartProductsCounter(cartProductsCounter + product.units);
+    } else {
+      setCart([...cart, product]);
+      changeCartProductsCounter(cartProductsCounter + product.units);
+    }
+  };
+
+  const deleteFromCart = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+  };
+
   return (
     <Router>
       <Switch>
@@ -106,18 +132,25 @@ const App = () => {
             <Header />
           </div>
           <div className="products_container">
+            <Route
+              path="/cart"
+              render={() => (
+                <Cart cart={cart} deleteFromCart={deleteFromCart} />
+              )}
+            />
+
             <div className="products_list">
               <Route
                 exact
                 path="/products"
-                render={() => <ProductList data={data} />}
+                render={() => <ProductList data={data} addToCart={addToCart} />}
               />
-              <Route
-                path="/product/:id"
-                render={() => <ProductDetails data={data} />}
-              />
-              <Route path="/cart" render={() => <Cart />} />
             </div>
+
+            <Route
+              path="/product/:id"
+              render={() => <ProductDetails data={data} />}
+            />
           </div>
         </div>
       </Switch>
