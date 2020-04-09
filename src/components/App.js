@@ -100,6 +100,8 @@ const data = [
 const App = () => {
   const [cart, setCart] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
+  const [searchText, setSearchText] = useState('');
+
   const addToCart = (product) => {
     const existingProduct = cart.find((p) => p.id === product.id);
     if (existingProduct) {
@@ -116,19 +118,35 @@ const App = () => {
     }
   };
 
-  const deleteFromCart = (id) => {
-    const getUnits = cart.find((item) => item.id === id);
-    const deletedUnits = getUnits.units;
+  const deleteFromCart = (id, units) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
-    setCartCounter(cartCounter - deletedUnits);
+    setCartCounter(cartCounter - units);
+  };
+
+  const changeSearchText = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const searchProduct = (products) => {
+    return products.filter((e) => {
+      return (
+        e.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
+        e.origin.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
+        null
+      );
+    });
   };
 
   return (
     <Router>
       <div className="content">
         <div className="header">
-          <Header cartCounter={cartCounter} />
+          <Header
+            cartCounter={cartCounter}
+            changeSearchText={changeSearchText}
+            searchText={searchText}
+          />
         </div>
         <div className="products_container">
           <div>
@@ -139,13 +157,17 @@ const App = () => {
               )}
             />
 
-            {/* <div className="products_list"> */}
             <Route
               exact
               path="/products"
-              render={() => <ProductList data={data} addToCart={addToCart} />}
+              render={() => (
+                <ProductList
+                  data={data}
+                  addToCart={addToCart}
+                  searchProduct={searchProduct}
+                />
+              )}
             />
-            {/* </div> */}
 
             <Route
               path="/product/:id"

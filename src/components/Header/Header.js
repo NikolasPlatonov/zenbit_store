@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Header.module.css';
 import cart from './../../assets/images/shopping-cart.png';
 import { NavLink } from 'react-router-dom';
 
-export const Header = ({ cartCounter }) => {
+export const Header = ({ cartCounter, changeSearchText, searchText }) => {
+  console.log('Header -> searchText', searchText);
   return (
     <div className={s.container}>
       <div className={s.search}>
         <input
           type="text"
           placeholder="Search product here..."
+          value={searchText}
+          onChange={changeSearchText}
           className={s.input}
         />
       </div>
