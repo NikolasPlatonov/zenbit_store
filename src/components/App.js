@@ -119,8 +119,6 @@ const App = () => {
   };
 
   const deleteFromCart = (id, units) => {
-    // const getUnits = cart.find((item) => item.id === id);
-    // const deletedUnits = getUnits.units;
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     setCartCounter(cartCounter - units);
