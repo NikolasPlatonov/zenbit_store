@@ -131,23 +131,30 @@ const App = () => {
           <Header cartCounter={cartCounter} />
         </div>
         <div className="products_container">
-          <Route
-            path="/cart"
-            render={() => <Cart cart={cart} deleteFromCart={deleteFromCart} />}
-          />
+          <div>
+            <Route
+              path="/cart"
+              render={() => (
+                <Cart cart={cart} deleteFromCart={deleteFromCart} />
+              )}
+            />
 
-          <div className="products_list">
+            {/* <div className="products_list"> */}
             <Route
               exact
               path="/products"
               render={() => <ProductList data={data} addToCart={addToCart} />}
             />
-          </div>
+            {/* </div> */}
 
-          <Route
-            path="/product/:id"
-            render={() => <ProductDetails data={data} />}
-          />
+            <Route
+              path="/product/:id"
+              render={() => (
+                <ProductDetails data={data} addToCart={addToCart} />
+              )}
+            />
+          </div>
+          <div></div>
         </div>
       </div>
     </Router>
