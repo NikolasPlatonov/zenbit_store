@@ -118,12 +118,12 @@ const App = () => {
     }
   };
 
-  const deleteFromCart = (id) => {
-    const getUnits = cart.find((item) => item.id === id);
-    const deletedUnits = getUnits.units;
+  const deleteFromCart = (id, units) => {
+    // const getUnits = cart.find((item) => item.id === id);
+    // const deletedUnits = getUnits.units;
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
-    setCartCounter(cartCounter - deletedUnits);
+    setCartCounter(cartCounter - units);
   };
 
   const changeSearchText = (e) => {
