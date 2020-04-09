@@ -99,36 +99,29 @@ const data = [
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [cartCounter, changeCartCounter] = useState(0);
-
-  console.log('App -> cartCounter', cartCounter);
-  console.log('App -> cart', cart);
-
+  const [cartCounter, setCartCounter] = useState(0);
   const addToCart = (product) => {
-    debugger;
     const existingProduct = cart.find((p) => p.id === product.id);
-    console.log('addToCart -> existingProduct', existingProduct);
-
     if (existingProduct) {
       const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
-      console.log('withoutExistingProduct', withoutExistingProduct);
       const updatedUnitsProduct = {
         ...existingProduct,
         units: existingProduct.units + 1,
       };
-
       setCart([...withoutExistingProduct, updatedUnitsProduct]);
-      changeCartCounter(cartCounter + 1);
+      setCartCounter(cartCounter + 1);
     } else {
       setCart([...cart, { ...product, units: 1 }]);
-      console.log('addToCart -> product', product);
-      changeCartCounter(cartCounter + 1);
+      setCartCounter(cartCounter + 1);
     }
   };
 
   const deleteFromCart = (id) => {
+    const getUnits = cart.find((item) => item.id === id);
+    const deletedUnits = getUnits.units;
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
+    setCartCounter(cartCounter - deletedUnits);
   };
 
   return (
