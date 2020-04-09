@@ -100,6 +100,8 @@ const data = [
 const App = () => {
   const [cart, setCart] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
+  const [searchText, setSearchText] = useState();
+
   const addToCart = (product) => {
     const existingProduct = cart.find((p) => p.id === product.id);
     if (existingProduct) {
@@ -124,11 +126,19 @@ const App = () => {
     setCartCounter(cartCounter - deletedUnits);
   };
 
+  const changeSearchText = (e) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <Router>
       <div className="content">
         <div className="header">
-          <Header cartCounter={cartCounter} />
+          <Header
+            cartCounter={cartCounter}
+            changeSearchText={changeSearchText}
+            searchText={searchText}
+          />
         </div>
         <div className="products_container">
           <div>
@@ -139,13 +149,11 @@ const App = () => {
               )}
             />
 
-            {/* <div className="products_list"> */}
             <Route
               exact
               path="/products"
               render={() => <ProductList data={data} addToCart={addToCart} />}
             />
-            {/* </div> */}
 
             <Route
               path="/product/:id"
