@@ -10,6 +10,8 @@ const ProductDetails = (props) => {
     }
   }
 
+  /////////////////////
+
   return (
     <div className={s.container}>
       <div className={s.photo_container}>
