@@ -6,7 +6,6 @@ import ProductDetails from './ProductDetails/ProductDetails';
 import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
-import store from '../Redux/store';
 
 const App = ({ data }) => {
   const [cart, setCart] = useState([]);
@@ -95,7 +94,6 @@ const App = ({ data }) => {
 };
 
 const mapToProps = (store) => {
-  console.log('mapToProps -> store', store);
   return {
     data: store.products.products,
   };
