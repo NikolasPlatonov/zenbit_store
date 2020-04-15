@@ -1,7 +1,7 @@
 const SELECT_ITEM = 'SELECT-ITEM';
 
 const initialState = {
-  data: [
+  products: [
     {
       isEditable: false,
       id: '4423b750-48ea-424a-9432-c77261bb4682',

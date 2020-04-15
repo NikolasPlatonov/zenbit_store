@@ -5,8 +5,10 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import ProductDetails from './ProductDetails/ProductDetails';
 import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
+import { connect } from 'react-redux';
+import store from '../Redux/store';
 
-const App = () => {
+const App = ({ data }) => {
   const [cart, setCart] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [searchText, setSearchText] = useState('');
@@ -92,4 +94,11 @@ const App = () => {
   );
 };
 
-export default App;
+const mapToProps = (store) => {
+  console.log('mapToProps -> store', store);
+  return {
+    data: store.products.products,
+  };
+};
+
+export default connect(mapToProps)(App);
