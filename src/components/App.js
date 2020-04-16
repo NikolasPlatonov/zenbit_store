@@ -6,11 +6,11 @@ import ProductDetails from './ProductDetails/ProductDetails';
 import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
-import { addToCart } from './../redux/actions/cart-action';
+import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
 
-const App = ({ data, cart, addToCart }) => {
+const App = ({ data, cart, addToCart, cartCounter, deleteFromCart }) => {
   // const [cart, setCart] = useState([]);
-  const [cartCounter, setCartCounter] = useState(0);
+  // const [cartCounter, setCartCounter] = useState(0);
   const [searchText, setSearchText] = useState('');
 
   // const addToCart = (product) => {
@@ -64,8 +64,8 @@ const App = ({ data, cart, addToCart }) => {
             <Route
               path="/cart"
               render={() => (
-                // <Cart cart={cart} deleteFromCart={deleteFromCart} />
-                <Cart cart={cart} />
+                <Cart cart={cart} deleteFromCart={deleteFromCart} />
+                // <Cart cart={cart} />
               )}
             />
 
@@ -99,7 +99,8 @@ const mapStateToProps = (store) => {
   return {
     data: store.data.products,
     cart: store.cart.cart,
+    cartCounter: store.cart.cartCounter,
   };
 };
 
-export default connect(mapStateToProps, { addToCart })(App);
+export default connect(mapStateToProps, { addToCart, deleteFromCart })(App);

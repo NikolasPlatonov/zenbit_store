@@ -4,7 +4,7 @@ import cart from './../../assets/images/shopping-cart.png';
 import { NavLink } from 'react-router-dom';
 
 export const Header = ({ cartCounter, changeSearchText, searchText }) => {
-  console.log('Header -> searchText', searchText);
+  console.log('Header -> cartCounter', cartCounter);
   return (
     <div className={s.container}>
       <div className={s.search}>
