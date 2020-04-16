@@ -1,4 +1,4 @@
-const SELECT_ITEM = 'SELECT-ITEM';
+// const SELECT_ITEM = 'SELECT-ITEM';
 
 const initialState = {
   products: [
@@ -91,16 +91,16 @@ const initialState = {
       updatedAt: '2020-01-20T08:56:16.118Z',
     },
   ],
-  selected: {},
+  // selected: {},
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_ITEM:
-      return {
-        ...state,
-        selected: action.item,
-      };
+    // case SELECT_ITEM:
+    //   return {
+    //     ...state,
+    //     selected: action.item,
+    //   };
     default:
       return state;
   }

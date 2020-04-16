@@ -93,10 +93,10 @@ const App = ({ data }) => {
   );
 };
 
-const mapToProps = (store) => {
+const mapStateToProps = (store) => {
   return {
-    data: store.products.products,
+    data: store.data.products,
   };
 };
 
-export default connect(mapToProps)(App);
+export default connect(mapStateToProps)(App);
