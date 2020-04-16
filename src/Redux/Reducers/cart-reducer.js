@@ -2,16 +2,16 @@ import { ADD_TO_CART } from './../actions/cart-action';
 
 const initialState = {
   cart: [],
+  cartCounter: 0,
 };
 
 export const cartReducer = (state = initialState, action) => {
-  console.log('!!!!!!', action);
   switch (action.type) {
     case ADD_TO_CART:
-      console.log('ACTION', action);
       return {
         ...state,
-        cart: ['Product added'],
+        cart: [...state.cart, { ...action.data, units: 1 }],
+        cartCounter: state.cartCounter + 1,
       };
     default:
       return state;

@@ -6,33 +6,34 @@ import ProductDetails from './ProductDetails/ProductDetails';
 import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
+import { addToCart } from './../redux/actions/cart-action';
 
-const App = ({ data }) => {
-  const [cart, setCart] = useState([]);
+const App = ({ data, cart, addToCart }) => {
+  // const [cart, setCart] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [searchText, setSearchText] = useState('');
 
-  const addToCart = (product) => {
-    const existingProduct = cart.find((p) => p.id === product.id);
-    if (existingProduct) {
-      const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
-      const updatedUnitsProduct = {
-        ...existingProduct,
-        units: existingProduct.units + 1,
-      };
-      setCart([...withoutExistingProduct, updatedUnitsProduct]);
-      setCartCounter(cartCounter + 1);
-    } else {
-      setCart([...cart, { ...product, units: 1 }]);
-      setCartCounter(cartCounter + 1);
-    }
-  };
+  // const addToCart = (product) => {
+  //   const existingProduct = cart.find((p) => p.id === product.id);
+  //   if (existingProduct) {
+  //     const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
+  //     const updatedUnitsProduct = {
+  //       ...existingProduct,
+  //       units: existingProduct.units + 1,
+  //     };
+  //     setCart([...withoutExistingProduct, updatedUnitsProduct]);
+  //     setCartCounter(cartCounter + 1);
+  //   } else {
+  //     setCart([...cart, { ...product, units: 1 }]);
+  //     setCartCounter(cartCounter + 1);
+  //   }
+  // };
 
-  const deleteFromCart = (id, units) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-    setCart(updatedCart);
-    setCartCounter(cartCounter - units);
-  };
+  // const deleteFromCart = (id, units) => {
+  //   const updatedCart = cart.filter((item) => item.id !== id);
+  //   setCart(updatedCart);
+  //   setCartCounter(cartCounter - units);
+  // };
 
   const changeSearchText = (e) => {
     setSearchText(e.target.value);
@@ -63,7 +64,8 @@ const App = ({ data }) => {
             <Route
               path="/cart"
               render={() => (
-                <Cart cart={cart} deleteFromCart={deleteFromCart} />
+                // <Cart cart={cart} deleteFromCart={deleteFromCart} />
+                <Cart cart={cart} />
               )}
             />
 
@@ -96,7 +98,8 @@ const App = ({ data }) => {
 const mapStateToProps = (store) => {
   return {
     data: store.data.products,
+    cart: store.cart.cart,
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { addToCart })(App);
