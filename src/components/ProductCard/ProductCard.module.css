@@ -8,9 +8,9 @@
 }
 
 .photo_container {
-  background-color: #ededed;
-  width: 8em;
-  height: 8em;
+  width: 9em;
+  height: 9em;
+  justify-content: center;
 }
 
 .photo {
