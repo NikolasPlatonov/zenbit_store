@@ -26,13 +26,21 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
         <div className={s.menu_btn}>
           <NavLink to="/contacts">CONTACT US</NavLink>
         </div>
+        <div>
+          <div className={s.cart}>
+            <NavLink to="/cart">
+              <img alt="cart_icon" src={cart} />
+            </NavLink>
+            <div className={s.cart_count}>
+              <div>{cartCounter}</div>
+              <div className={s.count_text}>products</div>
+            </div>
+          </div>
+        </div>
+        <div className={s.login}>
+          <button>Login</button>
+        </div>
       </div>
-      <div className={s.cart}>
-        <NavLink to="/cart">
-          <img alt="cart_icon" src={cart} />
-        </NavLink>
-      </div>
-      <div className={s.cart_count}>{cartCounter} products </div>
     </div>
   );
 };
