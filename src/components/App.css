@@ -1,13 +1,12 @@
 .content_main {
   display: grid;
   grid-template-columns: 1fr;
-  margin-left: 20vw;
-  margin-right: 20vw;
 }
 
 .content {
   display: grid;
   grid-template-rows: 120px 1fr;
+  justify-content: center;
 }
 
 .header {
