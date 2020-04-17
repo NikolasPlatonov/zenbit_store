@@ -1,4 +1,4 @@
-// const SELECT_ITEM = 'SELECT-ITEM';
+import { CHANGE_SEARCH_TEXT } from './../actions/products-action';
 
 const initialState = {
   products: [
@@ -91,11 +91,17 @@ const initialState = {
       updatedAt: '2020-01-20T08:56:16.118Z',
     },
   ],
+  searchText: '',
   // selected: {},
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_SEARCH_TEXT:
+      return {
+        ...state,
+        searchText: state.searchText + action.text,
+      };
     // case SELECT_ITEM:
     //   return {
     //     ...state,

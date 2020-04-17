@@ -1,3 +1,8 @@
+.container_main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .container {
   margin: 1em;
 }
@@ -19,6 +24,7 @@
   margin-top: 15px;
   margin-bottom: 10px;
   height: 2em;
+  text-align: center;
 }
 
 .origin {
@@ -33,4 +39,9 @@
   font-weight: lighter;
   color: green;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.button {
+  margin-left: 9%;
 }

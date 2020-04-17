@@ -7,11 +7,20 @@ import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
 import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
+import { changeSearchText } from './../redux/actions/products-action';
 
-const App = ({ data, cart, addToCart, cartCounter, deleteFromCart }) => {
+const App = ({
+  data,
+  cart,
+  addToCart,
+  cartCounter,
+  deleteFromCart,
+  searchText,
+  changeSearchText,
+}) => {
   // const [cart, setCart] = useState([]);
   // const [cartCounter, setCartCounter] = useState(0);
-  const [searchText, setSearchText] = useState('');
+  // const [searchText, setSearchText] = useState('');
 
   // const addToCart = (product) => {
   //   const existingProduct = cart.find((p) => p.id === product.id);
@@ -35,9 +44,9 @@ const App = ({ data, cart, addToCart, cartCounter, deleteFromCart }) => {
   //   setCartCounter(cartCounter - units);
   // };
 
-  const changeSearchText = (e) => {
-    setSearchText(e.target.value);
-  };
+  // const changeSearchText = (e) => {
+  //   setSearchText(e.target.value);
+  // };
 
   const searchProduct = (products) => {
     return products.filter((e) => {
@@ -51,44 +60,45 @@ const App = ({ data, cart, addToCart, cartCounter, deleteFromCart }) => {
 
   return (
     <Router>
-      <div className="content">
-        <div className="header">
-          <Header
-            cartCounter={cartCounter}
-            changeSearchText={changeSearchText}
-            searchText={searchText}
-          />
-        </div>
-        <div className="products_container">
-          <div>
-            <Route
-              path="/cart"
-              render={() => (
-                <Cart cart={cart} deleteFromCart={deleteFromCart} />
-                // <Cart cart={cart} />
-              )}
-            />
-
-            <Route
-              exact
-              path="/products"
-              render={() => (
-                <ProductList
-                  data={data}
-                  addToCart={addToCart}
-                  searchProduct={searchProduct}
-                />
-              )}
-            />
-
-            <Route
-              path="/product/:id"
-              render={() => (
-                <ProductDetails data={data} addToCart={addToCart} />
-              )}
+      <div className="content_main">
+        <div className="content">
+          <div className="header">
+            <Header
+              cartCounter={cartCounter}
+              changeSearchText={changeSearchText}
+              searchText={searchText}
             />
           </div>
-          <div></div>
+          <div className="products_container">
+            <div>
+              <Route
+                path="/cart"
+                render={() => (
+                  <Cart cart={cart} deleteFromCart={deleteFromCart} />
+                )}
+              />
+
+              <Route
+                exact
+                path="/products"
+                render={() => (
+                  <ProductList
+                    data={data}
+                    addToCart={addToCart}
+                    // searchProduct={searchProduct}
+                  />
+                )}
+              />
+
+              <Route
+                path="/product/:id"
+                render={() => (
+                  <ProductDetails data={data} addToCart={addToCart} />
+                )}
+              />
+            </div>
+            <div></div>
+          </div>
         </div>
       </div>
     </Router>
@@ -96,11 +106,17 @@ const App = ({ data, cart, addToCart, cartCounter, deleteFromCart }) => {
 };
 
 const mapStateToProps = (store) => {
+  console.log('mapStateToProps -> store', store);
   return {
     data: store.data.products,
     cart: store.cart.cart,
     cartCounter: store.cart.cartCounter,
+    searchText: store.searchText,
   };
 };
 
-export default connect(mapStateToProps, { addToCart, deleteFromCart })(App);
+export default connect(mapStateToProps, {
+  addToCart,
+  deleteFromCart,
+  changeSearchText,
+})(App);
