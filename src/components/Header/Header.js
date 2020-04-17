@@ -33,12 +33,12 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
             </NavLink>
             <div className={s.cart_count}>
               <div>{cartCounter}</div>
-              <div className={s.count_text}>products</div>
+              <div className={s.count_text}></div>
             </div>
           </div>
         </div>
-        <div className={s.login}>
-          <button>Login</button>
+        <div className={s.menu_btn}>
+          <NavLink to="/login">LOGIN</NavLink>
         </div>
       </div>
     </div>
