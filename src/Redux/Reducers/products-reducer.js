@@ -1,5 +1,3 @@
-import { CHANGE_SEARCH_TEXT } from './../actions/products-action';
-
 const initialState = {
   products: [
     {
@@ -91,22 +89,10 @@ const initialState = {
       updatedAt: '2020-01-20T08:56:16.118Z',
     },
   ],
-  searchText: '',
-  // selected: {},
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_SEARCH_TEXT:
-      return {
-        ...state,
-        searchText: action.text,
-      };
-    // case SELECT_ITEM:
-    //   return {
-    //     ...state,
-    //     selected: action.item,
-    //   };
     default:
       return state;
   }
