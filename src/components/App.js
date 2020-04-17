@@ -111,7 +111,7 @@ const mapStateToProps = (store) => {
     data: store.data.products,
     cart: store.cart.cart,
     cartCounter: store.cart.cartCounter,
-    searchText: store.searchText,
+    searchText: store.data.searchText,
   };
 };
 

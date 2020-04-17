@@ -4,5 +4,5 @@ export const CHANGE_SEARCH_TEXT = 'CHANGE-SEARCH-TEXT';
 
 export const changeSearchText = (text) => ({
   type: CHANGE_SEARCH_TEXT,
-  text: text,
+  text: text.target.value,
 });

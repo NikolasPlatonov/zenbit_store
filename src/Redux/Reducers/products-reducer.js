@@ -100,7 +100,7 @@ const productsReducer = (state = initialState, action) => {
     case CHANGE_SEARCH_TEXT:
       return {
         ...state,
-        searchText: state.searchText + action.text,
+        searchText: action.text,
       };
     // case SELECT_ITEM:
     //   return {
