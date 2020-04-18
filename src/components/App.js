@@ -8,7 +8,7 @@ import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
 import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
 import { changeSearchText } from './../redux/actions/products-action';
-import { Login } from './Login/Login';
+import SignUp from './Login/SignUp';
 
 const App = ({
   data,
@@ -98,7 +98,7 @@ const App = ({
                 )}
               />
 
-              <Route path="/login" render={() => <Login />} />
+              <Route path="/login" render={() => <SignUp />} />
             </div>
             <div></div>
           </div>

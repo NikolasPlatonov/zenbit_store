@@ -38,7 +38,7 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
           </div>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/login">LOGIN</NavLink>
+          <NavLink to="/login">LOGIN/SIGN_UP</NavLink>
         </div>
       </div>
     </div>
