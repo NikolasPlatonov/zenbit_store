@@ -7,12 +7,12 @@ import { addToCart } from '../../redux/actions/cart-action';
 const ProductCard = ({ el, addToCart }) => {
   return (
     <div className={s.container_main}>
-      <div className={s.container}>
-        <div className={s.photo_container}>
-          <NavLink to={`/product/` + el.id}>
-            <img alt="product_image" src={el.image} className={s.photo} />
-          </NavLink>
-        </div>
+      <div className={s.photo_container}>
+        <NavLink to={`/product/` + el.id}>
+          <img alt="product_image" src={el.image} className={s.photo} />
+        </NavLink>
+      </div>
+      <div className={s.info_container}>
         <div className={s.name}>{el.name}</div>
         <div className={s.price}>{el.price} USD</div>
         <div className={s.button}>

@@ -15,27 +15,29 @@ export const Login = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormGroup>
-        <FormLabel>Email</FormLabel>
-        <FormControl
-          autoFocus
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <FormLabel>Password</FormLabel>
-        <FormControl
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-        />
-      </FormGroup>
-      <Button block bsSize="large" disabled={!validateForm()} type="submit">
-        Login
-      </Button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <FormGroup>
+          <FormLabel>Email</FormLabel>
+          <FormControl
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel>Password</FormLabel>
+          <FormControl
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+          />
+        </FormGroup>
+        <Button block bsSize="large" disabled={!validateForm()} type="submit">
+          Login
+        </Button>
+      </form>
+    </div>
   );
 };

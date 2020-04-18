@@ -1,16 +1,17 @@
 .container_main {
   display: grid;
-  grid-template-columns: 1fr;
-}
-
-.container {
+  grid-template-rows: 3fr 2fr;
   margin: 1em;
 }
 
 .photo_container {
-  width: 9em;
-  height: 9em;
-  justify-content: center;
+  /* width: 100%; */
+  flex-basis: auto;
+  height: 100%;
+}
+
+.info_container {
+  justify-content: flex-end;
 }
 
 .photo {
@@ -43,5 +44,5 @@
 }
 
 .button {
-  margin-left: 9%;
+  justify-content: flex-start;
 }
