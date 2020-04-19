@@ -1,3 +1,5 @@
+import { CHANGE_SEARCH_TEXT, SEARCH_PRODUCTS } from '../actions/search-action';
+
 const initialState = {
   products: [
     {
@@ -89,10 +91,28 @@ const initialState = {
       updatedAt: '2020-01-20T08:56:16.118Z',
     },
   ],
+  searchText: '',
+  // searchProducts: [],
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_SEARCH_TEXT:
+      return {
+        ...state,
+        searchText: action.text,
+      };
+
+    case SEARCH_PRODUCTS:
+      return {
+        ...state,
+        products: [
+          ...state.products.filter((product) =>
+            product.name.toLowerCase().includes(state.searchText.toLowerCase())
+          ),
+        ],
+      };
+
     default:
       return state;
   }

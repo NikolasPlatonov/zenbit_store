@@ -7,8 +7,10 @@ import { Header } from './Header/Header';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
 import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
-import { changeSearchText } from './../redux/actions/products-action';
-import { searchProducts } from './../redux/actions/search-action';
+import {
+  changeSearchText,
+  searchProducts,
+} from './../redux/actions/products-action';
 import SignUp from './Login/SignUp';
 
 const App = ({

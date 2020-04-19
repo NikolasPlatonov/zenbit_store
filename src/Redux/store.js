@@ -6,7 +6,7 @@ import searchReducer from './reducers/search-reducer';
 const reducers = combineReducers({
   data: productsReducer,
   cart: cartReducer,
-  search: searchReducer,
+  // search: searchReducer,
 });
 
 const store = createStore(
