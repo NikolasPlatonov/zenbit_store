@@ -16,8 +16,7 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
           className={s.input}
         />
         <div className={s.search_icon}>
-          {' '}
-          <img alt="search_icon" src={search_icon} />{' '}
+          <img alt="search_icon" src={search_icon} onClick={() => {}} />
         </div>
       </div>
 
