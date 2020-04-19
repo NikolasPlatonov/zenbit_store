@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './Header.module.css';
 import cart from './../../assets/images/shopping-cart.png';
 import { NavLink } from 'react-router-dom';
 import search_icon from './../../assets/images/search_icon.png';
 
-export const Header = ({ cartCounter, changeSearchText, searchText }) => {
+export const Header = ({
+  cartCounter,
+  changeSearchText,
+  searchText,
+  searchProducts,
+}) => {
   return (
     <div className={s.container}>
       <div className={s.search_container}>
@@ -15,7 +20,7 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
           onChange={changeSearchText}
           className={s.input}
         />
-        <button className={s.search_btn}>
+        <button className={s.search_btn} onClick={searchProducts}>
           <img alt="search_icon" src={search_icon} />
         </button>
       </div>

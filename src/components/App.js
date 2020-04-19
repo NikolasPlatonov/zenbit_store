@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
@@ -8,6 +8,7 @@ import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
 import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
 import { changeSearchText } from './../redux/actions/products-action';
+import { searchProducts } from './../redux/actions/search-action';
 import SignUp from './Login/SignUp';
 
 const App = ({
@@ -18,6 +19,7 @@ const App = ({
   deleteFromCart,
   searchText,
   changeSearchText,
+  searchProducts,
 }) => {
   // const [cart, setCart] = useState([]);
   // const [cartCounter, setCartCounter] = useState(0);
@@ -49,15 +51,15 @@ const App = ({
   //   setSearchText(e.target.value);
   // };
 
-  const searchProduct = (products) => {
-    return products.filter((e) => {
-      return (
-        e.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
-        e.origin.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
-        null
-      );
-    });
-  };
+  // const searchProduct = (products) => {
+  //   return products.filter((e) => {
+  //     return (
+  //       e.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
+  //       e.origin.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
+  //       null
+  //     );
+  //   });
+  // };
 
   return (
     <Router>
@@ -68,6 +70,7 @@ const App = ({
               cartCounter={cartCounter}
               changeSearchText={changeSearchText}
               searchText={searchText}
+              searchProducts={searchProducts}
             />
           </div>
           <div className="products_container">
@@ -82,13 +85,7 @@ const App = ({
               <Route
                 exact
                 path="/products"
-                render={() => (
-                  <ProductList
-                    data={data}
-                    addToCart={addToCart}
-                    // searchProduct={searchProduct}
-                  />
-                )}
+                render={() => <ProductList data={data} addToCart={addToCart} />}
               />
 
               <Route
@@ -122,4 +119,5 @@ export default connect(mapStateToProps, {
   addToCart,
   deleteFromCart,
   changeSearchText,
+  searchProducts,
 })(App);
