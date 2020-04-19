@@ -92,7 +92,7 @@ const initialState = {
     },
   ],
   searchText: '',
-  // searchProducts: [],
+  searchProducts: [],
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -106,7 +106,7 @@ const productsReducer = (state = initialState, action) => {
     case SEARCH_PRODUCTS:
       return {
         ...state,
-        products: [
+        searchProducts: [
           ...state.products.filter((product) =>
             product.name.toLowerCase().includes(state.searchText.toLowerCase())
           ),

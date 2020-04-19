@@ -23,10 +23,6 @@ const App = ({
   changeSearchText,
   searchProducts,
 }) => {
-  // const [cart, setCart] = useState([]);
-  // const [cartCounter, setCartCounter] = useState(0);
-  // const [searchText, setSearchText] = useState('');
-
   // const addToCart = (product) => {
   //   const existingProduct = cart.find((p) => p.id === product.id);
   //   if (existingProduct) {
@@ -41,26 +37,6 @@ const App = ({
   //     setCart([...cart, { ...product, units: 1 }]);
   //     setCartCounter(cartCounter + 1);
   //   }
-  // };
-
-  // const deleteFromCart = (id, units) => {
-  //   const updatedCart = cart.filter((item) => item.id !== id);
-  //   setCart(updatedCart);
-  //   setCartCounter(cartCounter - units);
-  // };
-
-  // const changeSearchText = (e) => {
-  //   setSearchText(e.target.value);
-  // };
-
-  // const searchProduct = (products) => {
-  //   return products.filter((e) => {
-  //     return (
-  //       e.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
-  //       e.origin.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 ||
-  //       null
-  //     );
-  //   });
   // };
 
   return (
@@ -110,7 +86,9 @@ const App = ({
 const mapStateToProps = (store) => {
   console.log('mapStateToProps -> store', store);
   return {
-    data: store.data.products,
+    data: store.data.searchText
+      ? store.data.searchProducts
+      : store.data.products,
     cart: store.cart.cart,
     cartCounter: store.cart.cartCounter,
     searchText: store.data.searchText,

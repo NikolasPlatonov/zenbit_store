@@ -107,7 +107,7 @@ const searchReducer = (state = initialState, action) => {
       return {
         ...state,
         searchProducts: [
-          ...state.products.filter((product) =>
+          state.products.filter((product) =>
             product.name.toLowerCase().includes(state.searchText.toLowerCase())
           ),
         ],
