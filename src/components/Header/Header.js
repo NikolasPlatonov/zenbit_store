@@ -15,9 +15,9 @@ export const Header = ({ cartCounter, changeSearchText, searchText }) => {
           onChange={changeSearchText}
           className={s.input}
         />
-        <div className={s.search_icon}>
-          <img alt="search_icon" src={search_icon} onClick={() => {}} />
-        </div>
+        <button className={s.search_btn}>
+          <img alt="search_icon" src={search_icon} />
+        </button>
       </div>
 
       <div className={s.menu_container}>

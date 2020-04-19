@@ -5,7 +5,7 @@
 
 .search_container {
   display: grid;
-  grid-template-columns: 1fr 20px;
+  grid-template-columns: 1fr 25px;
   text-align: left;
   background-color: #ededed;
   align-content: center;
@@ -20,8 +20,14 @@
   width: 80%;
 }
 
-.search_icon img {
-  text-align: center;
+.search_btn {
+  cursor: pointer;
+  align-items: center;
+  background-color: #ededed;
+  border: 0px solid;
+}
+
+.search_btn img {
   height: 15px;
 }
 
