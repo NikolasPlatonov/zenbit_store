@@ -2,18 +2,23 @@ import React, { useState } from 'react';
 import s from './Header.module.css';
 import cart from './../../assets/images/shopping-cart.png';
 import { NavLink } from 'react-router-dom';
+import search_icon from './../../assets/images/search_icon.png';
 
 export const Header = ({ cartCounter, changeSearchText, searchText }) => {
   return (
     <div className={s.container}>
-      <div className={s.search}>
+      <div className={s.search_container}>
         <input
           type="text"
-          placeholder="Search product here..."
+          placeholder="Search..."
           value={searchText}
           onChange={changeSearchText}
           className={s.input}
         />
+        <div className={s.search_icon}>
+          {' '}
+          <img alt="search_icon" src={search_icon} />{' '}
+        </div>
       </div>
 
       <div className={s.menu_container}>
