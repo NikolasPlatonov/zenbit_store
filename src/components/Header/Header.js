@@ -33,9 +33,9 @@ export const Header = ({
         </button> */}
 
         <NavLink to={`/search/?text=` + searchText}>
-          <button className={s.search_btn} onClick={searchProducts}>
+          <div className={s.search_btn} onClick={searchProducts}>
             <img alt="search_icon" src={search_icon} />
-          </button>
+          </div>
         </NavLink>
       </div>
 
