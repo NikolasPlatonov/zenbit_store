@@ -27,6 +27,7 @@ export const Header = ({
           className={s.input}
           onKeyPress={keyPressed}
         />
+
         <button className={s.search_btn} onClick={searchProducts}>
           <img alt="search_icon" src={search_icon} />
         </button>
@@ -54,7 +55,7 @@ export const Header = ({
           </div>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/login">LOGIN/SIGN_UP</NavLink>
+          <NavLink to="/login">MY_ACCOUNT</NavLink>
         </div>
       </div>
     </div>

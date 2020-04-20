@@ -30,34 +30,40 @@ const SignUp = () => (
         //то есть, в которых что-то ввели
         render={({ errors, touched }) => (
           <Form className={s.form_container}>
-            <label htmlFor="email">Email</label>
-            <Field
-              name="email"
-              placeholder="mtarasov777@gmail.com"
-              type="email"
-            />
+            <div className={s.form_item}>
+              <label htmlFor="email">Email</label>
+              <Field name="email" placeholder="Enter e-mail..." type="email" />
+              {
+                //если в этом поле возникла ошибка и
+                //если это поле "затронуто, то выводим ошибку
+                errors.email && touched.email && (
+                  <div className={s.field_error}>{errors.email}</div>
+                )
+              }
+            </div>
 
-            {
-              //если в этом поле возникла ошибка и
-              //если это поле "затронуто, то выводим ошибку
-              errors.email && touched.email && (
-                <div className={s.field_error}>{errors.email}</div>
-              )
-            }
-
-            <label htmlFor="username">Username</label>
-            <Field name="username" placeholder="snapoak" type="text" />
-
-            {errors.username && touched.username && (
-              <div className={s.field_error}>{errors.username}</div>
-            )}
-
-            <label htmlFor="password">Password</label>
-            <Field name="password" placeholder="123456qwe" type="password" />
-
-            {errors.password && touched.password && (
-              <div className={s.field_error}>{errors.password}</div>
-            )}
+            <div className={s.form_item}>
+              <label htmlFor="username">Username</label>
+              <Field
+                name="username"
+                placeholder="Enter user name..."
+                type="text"
+              />
+              {errors.username && touched.username && (
+                <div className={s.field_error}>{errors.username}</div>
+              )}
+            </div>
+            <div className={s.form_item}>
+              <label htmlFor="password">Password</label>
+              <Field
+                name="password"
+                placeholder="Enter password..."
+                type="password"
+              />
+              {errors.password && touched.password && (
+                <div className={s.field_error}>{errors.password}</div>
+              )}
+            </div>
 
             <div className={s.btn_container}>
               <button type="submit">Submit</button>
