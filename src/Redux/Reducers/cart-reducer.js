@@ -8,11 +8,22 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      return {
-        ...state,
-        cart: [...state.cart, { ...action.data, units: 1 }],
-        cartCounter: state.cartCounter + 1,
-      };
+      const existingProduct = state.cart.find((p) => p.id === action.data.id);
+
+      return existingProduct
+        ? {
+            ...state,
+            cart: [
+              ...state.cart.filter((p) => p.id !== action.data.id),
+              { ...existingProduct, units: existingProduct.units + 1 },
+            ],
+            cartCounter: state.cartCounter + 1,
+          }
+        : {
+            ...state,
+            cart: [...state.cart, { ...action.data, units: 1 }],
+            cartCounter: state.cartCounter + 1,
+          };
 
     case DELETE_FROM_CART:
       return {

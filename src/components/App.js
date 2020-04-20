@@ -25,22 +25,6 @@ const App = ({
   searchProducts,
   searchProductsList,
 }) => {
-  // const addToCart = (product) => {
-  //   const existingProduct = cart.find((p) => p.id === product.id);
-  //   if (existingProduct) {
-  //     const withoutExistingProduct = cart.filter((p) => p.id !== product.id);
-  //     const updatedUnitsProduct = {
-  //       ...existingProduct,
-  //       units: existingProduct.units + 1,
-  //     };
-  //     setCart([...withoutExistingProduct, updatedUnitsProduct]);
-  //     setCartCounter(cartCounter + 1);
-  //   } else {
-  //     setCart([...cart, { ...product, units: 1 }]);
-  //     setCartCounter(cartCounter + 1);
-  //   }
-  // };
-
   return (
     <Router>
       <div className="content_main">
