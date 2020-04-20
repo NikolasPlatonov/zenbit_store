@@ -12,6 +12,7 @@ import {
   searchProducts,
 } from './../redux/actions/products-action';
 import SignUp from './Login/SignUp';
+import { Search } from './Search/Search';
 
 const App = ({
   data,
@@ -22,6 +23,7 @@ const App = ({
   searchText,
   changeSearchText,
   searchProducts,
+  searchProductsList,
 }) => {
   // const addToCart = (product) => {
   //   const existingProduct = cart.find((p) => p.id === product.id);
@@ -74,6 +76,16 @@ const App = ({
               />
 
               <Route path="/login" render={() => <SignUp />} />
+
+              <Route
+                path="/search"
+                render={() => (
+                  <Search
+                    searchProducts={searchProductsList}
+                    addToCart={addToCart}
+                  />
+                )}
+              />
             </div>
             <div></div>
           </div>
@@ -86,12 +98,14 @@ const App = ({
 const mapStateToProps = (store) => {
   console.log('mapStateToProps -> store', store);
   return {
-    data: store.data.searchText
-      ? store.data.searchProducts
-      : store.data.products,
+    // data: store.data.searchText
+    //   ? store.data.searchProducts
+    //   : store.data.products,
+    data: store.data.products,
     cart: store.cart.cart,
     cartCounter: store.cart.cartCounter,
     searchText: store.data.searchText,
+    searchProductsList: store.data.searchProducts,
   };
 };
 

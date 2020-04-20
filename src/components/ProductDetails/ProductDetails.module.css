@@ -1,12 +1,13 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 200px;
   margin-top: 1em;
+  justify-content: center;
 }
 
 .photo_container {
   display: grid;
-  grid-template-rows: 15em 1fr;
+  grid-template-rows: 1fr;
   margin: 1em;
 }
 

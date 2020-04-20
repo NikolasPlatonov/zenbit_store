@@ -25,12 +25,18 @@ export const Header = ({
           value={searchText}
           onChange={changeSearchText}
           className={s.input}
-          onKeyPress={keyPressed}
+          // onKeyPress={keyPressed}
         />
 
-        <button className={s.search_btn} onClick={searchProducts}>
+        {/* <button className={s.search_btn} onClick={searchProducts}>
           <img alt="search_icon" src={search_icon} />
-        </button>
+        </button> */}
+
+        <NavLink to="/search">
+          <button className={s.search_btn} onClick={searchProducts}>
+            <img alt="search_icon" src={search_icon} />
+          </button>
+        </NavLink>
       </div>
 
       <div className={s.menu_container}>

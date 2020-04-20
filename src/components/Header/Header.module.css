@@ -5,7 +5,7 @@
 
 .search_container {
   display: grid;
-  grid-template-columns: 1fr 25px;
+  grid-template-columns: 1fr 30px;
   text-align: left;
   background-color: #ededed;
   align-content: center;
