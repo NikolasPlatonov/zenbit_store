@@ -53,14 +53,14 @@
   background-size: contain;
   background-position-x: 50%;
   background-position-y: 50%;
-  min-height: 43px;
+  min-height: 37px;
 }
 
 .cart_count {
   color: #5f7e96;
   text-align: center;
-  padding-top: 3px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 5px;
 }
 
 .login {

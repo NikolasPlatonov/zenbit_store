@@ -49,11 +49,15 @@ export const Header = ({
         <div className={s.menu_btn}>
           <NavLink to="/contacts">CONTACT US</NavLink>
         </div>
-        <NavLink to="/cart">
-          <div className={s.cart_image}>
-            <div className={s.cart_count}>{cartCounter}</div>
-          </div>
-        </NavLink>
+
+        <div className={s.menu_btn}>
+          <NavLink to="/cart">
+            <div className={s.cart_image}>
+              <div className={s.cart_count}>{cartCounter}</div>
+            </div>
+          </NavLink>
+        </div>
+
         <div className={s.menu_btn}>
           <NavLink to="/login">MY_ACCOUNT</NavLink>
         </div>
