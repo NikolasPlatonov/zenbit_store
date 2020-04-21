@@ -41,6 +41,11 @@ export const Header = ({
 
       <div className={s.menu_container}>
         <div className={s.menu_btn}>
+          <NavLink to="/home" activeClassName={s.active}>
+            HOME
+          </NavLink>
+        </div>
+        <div className={s.menu_btn}>
           <NavLink to="/products" activeClassName={s.active}>
             SHOP
           </NavLink>
