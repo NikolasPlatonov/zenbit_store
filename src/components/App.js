@@ -13,6 +13,7 @@ import {
 } from './../redux/actions/products-action';
 import SignUp from './Login/SignUp';
 import { Search } from './Search/Search';
+import { Help } from './Help/Help';
 
 const App = ({
   data,
@@ -40,16 +41,18 @@ const App = ({
           <div className="products_container">
             <div>
               <Route
+                exact
+                path="/products"
+                render={() => <ProductList data={data} addToCart={addToCart} />}
+              />
+
+              <Route path="/help" render={() => <Help />} />
+
+              <Route
                 path="/cart"
                 render={() => (
                   <Cart cart={cart} deleteFromCart={deleteFromCart} />
                 )}
-              />
-
-              <Route
-                exact
-                path="/products"
-                render={() => <ProductList data={data} addToCart={addToCart} />}
               />
 
               <Route

@@ -51,7 +51,7 @@ export const Header = ({
           </NavLink>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/contacts" activeClassName={s.active}>
+          <NavLink to="/help" activeClassName={s.active}>
             HELP
           </NavLink>
         </div>
