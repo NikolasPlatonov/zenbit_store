@@ -20,7 +20,7 @@
 
 .name {
   font-style: inherit;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: lighter;
   margin-top: 15px;
   margin-bottom: 10px;
@@ -36,7 +36,7 @@
 
 .price {
   font-style: inherit;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: lighter;
   color: green;
   margin-bottom: 10px;

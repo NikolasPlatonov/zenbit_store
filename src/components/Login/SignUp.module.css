@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 80px 2fr;
   justify-content: center;
 }
 
@@ -11,13 +11,34 @@
   text-align: start;
 }
 
-.form_item {
+.main_title {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 30px;
+  text-align: center;
+}
+
+.form_title {
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: left;
+}
+
+.form_input {
+  color: #5f7e96;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: left;
 }
 
 .field_error {
-  color: red;
+  color: #ff5e3a;
   font-size: small;
 }
 

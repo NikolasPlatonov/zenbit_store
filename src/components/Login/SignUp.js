@@ -5,9 +5,7 @@ import s from './SignUp.module.css';
 
 const SignUp = () => (
   <div className={s.container}>
-    <div>
-      <h1>Sign up</h1>
-    </div>
+    <div className={s.main_title}>Sign up</div>
     <div>
       <Formik
         //инициализируем значения input-ов
@@ -30,9 +28,14 @@ const SignUp = () => (
         //то есть, в которых что-то ввели
         render={({ errors, touched }) => (
           <Form className={s.form_container}>
-            <div className={s.form_item}>
+            <div className={s.form_title}>
               <label htmlFor="email">Email</label>
-              <Field name="email" placeholder="Enter e-mail..." type="email" />
+              <Field
+                name="email"
+                placeholder="Enter e-mail..."
+                type="email"
+                className={s.form_input}
+              />
               {
                 //если в этом поле возникла ошибка и
                 //если это поле "затронуто, то выводим ошибку
@@ -42,23 +45,25 @@ const SignUp = () => (
               }
             </div>
 
-            <div className={s.form_item}>
+            <div className={s.form_title}>
               <label htmlFor="username">Username</label>
               <Field
                 name="username"
                 placeholder="Enter user name..."
                 type="text"
+                className={s.form_input}
               />
               {errors.username && touched.username && (
                 <div className={s.field_error}>{errors.username}</div>
               )}
             </div>
-            <div className={s.form_item}>
+            <div className={s.form_title}>
               <label htmlFor="password">Password</label>
               <Field
                 name="password"
                 placeholder="Enter password..."
                 type="password"
+                className={s.form_input}
               />
               {errors.password && touched.password && (
                 <div className={s.field_error}>{errors.password}</div>
