@@ -37,8 +37,13 @@ export const Blog = () => {
         </div>
       </div>
       <div className={s.list_container}>
-        <div className={s.title}></div>
-        <div className={s.list_item}></div>
+        <div className={s.list_title}>Categories</div>
+        <div className={s.list_item}> Edge case</div>
+        <div className={s.list_item}>Markup</div>
+        <div className={s.list_item}>Media</div>
+        <div className={s.list_item}>News</div>
+        <div className={s.list_item}>Post Formats</div>
+        <div className={s.list_item}>Template</div>
       </div>
     </div>
   );

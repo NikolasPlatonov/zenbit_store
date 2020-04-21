@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-rows: 50px 1fr 50px;
+  margin-top: 30px;
 }
 
 .title_container {
@@ -23,6 +24,13 @@
   grid-template-columns: 50px 100px 2fr repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+}
+
+.title {
+  color: #5f7e96;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 17px;
 }
 
 .order_delete {
