@@ -41,13 +41,19 @@ export const Header = ({
 
       <div className={s.menu_container}>
         <div className={s.menu_btn}>
-          <NavLink to="/products">SHOP</NavLink>
+          <NavLink to="/products" activeClassName={s.active}>
+            SHOP
+          </NavLink>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/blog">BLOG</NavLink>
+          <NavLink to="/blog" activeClassName={s.active}>
+            BLOG
+          </NavLink>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/contacts">CONTACT US</NavLink>
+          <NavLink to="/contacts" activeClassName={s.active}>
+            HELP
+          </NavLink>
         </div>
 
         <div className={s.menu_btn}>
@@ -59,7 +65,9 @@ export const Header = ({
         </div>
 
         <div className={s.menu_btn}>
-          <NavLink to="/login">MY_ACCOUNT</NavLink>
+          <NavLink to="/login" activeClassName={s.active}>
+            ACCOUNT
+          </NavLink>
         </div>
       </div>
     </div>

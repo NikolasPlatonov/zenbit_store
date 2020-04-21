@@ -46,6 +46,10 @@
   font-size: 13px;
 }
 
+.menu_btn a.active {
+  color: #ff5e3a;
+}
+
 .cart_image {
   background-image: url('./../../assets/images/shopping-cart.png');
   background-repeat: no-repeat;
