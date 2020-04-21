@@ -46,29 +46,21 @@
   font-size: 13px;
 }
 
-.cart {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-align: center;
-}
-
-.cart img {
-  height: 25px;
-  margin-top: 8px;
+.cart_image {
+  background-image: url('./../../assets/images/shopping-cart.png');
+  background-repeat: no-repeat;
+  /* background-size: 55% auto; */
+  background-size: contain;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  min-height: 43px;
 }
 
 .cart_count {
-  display: grid;
-  grid-template-columns: 1fr;
   color: #5f7e96;
-  text-align: left;
-  margin-top: 10px;
-}
-
-.count_text {
-  font-size: 12px;
-  margin-top: 3px;
-  text-align: left;
+  text-align: center;
+  padding-top: 3px;
+  padding-left: 4px;
 }
 
 .login {
