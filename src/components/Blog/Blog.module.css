@@ -1,0 +1,34 @@
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+}
+
+.info_container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  margin: 1vw;
+}
+
+.text {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.title {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 20px;
+}
+
+.article {
+  color: #5f7e96;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 15px;
+}

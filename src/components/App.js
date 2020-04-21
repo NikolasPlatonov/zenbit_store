@@ -14,6 +14,7 @@ import {
 import SignUp from './Login/SignUp';
 import { Search } from './Search/Search';
 import { Help } from './Help/Help';
+import { Blog } from './Blog/Blog';
 
 const App = ({
   data,
@@ -41,12 +42,24 @@ const App = ({
           <div className="products_container">
             <div>
               <Route
+                path="/search"
+                render={() => (
+                  <Search
+                    searchProducts={searchProductsList}
+                    addToCart={addToCart}
+                  />
+                )}
+              />
+
+              <Route
                 exact
                 path="/products"
                 render={() => <ProductList data={data} addToCart={addToCart} />}
               />
 
               <Route path="/help" render={() => <Help />} />
+
+              <Route path="/blog" render={() => <Blog />} />
 
               <Route
                 path="/cart"
@@ -63,16 +76,6 @@ const App = ({
               />
 
               <Route path="/login" render={() => <SignUp />} />
-
-              <Route
-                path="/search"
-                render={() => (
-                  <Search
-                    searchProducts={searchProductsList}
-                    addToCart={addToCart}
-                  />
-                )}
-              />
             </div>
             <div></div>
           </div>
