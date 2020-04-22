@@ -1,24 +1,29 @@
 import axios from 'axios';
 import { API_REQUEST } from './../actions/api-action';
-import { merge, pick } from 'lodash';
+import { merge } from 'lodash';
 
 export const apiCall = ({
-  url = 'https://shopserver.firebaseapp.com/',
+  url = 'https://shopserver.firebaseapp.com',
   endpoint = '',
   method = 'GET',
   body = {},
   headers = {},
 }) => {
-  const methodUpgrated = method.toLowerCase();
+  // const methodUpgrated = method.toLowerCase();
 
-  axios.create({
-    baseURL: url,
-    headers,
-  });
+  console.log('url>>>>>', url);
+  // axios.create({
+  //   baseURL: url,
+  //   headers,
+  // });
 
   return new Promise((resolve, reject) => {
     // resolve === всё ОК; reject === всё плохо
-    axios[methodUpgrated](endpoint, body)
+    axios({
+      url: `https://shopserver.firebaseapp.com${endpoint}`,
+      method,
+      data: body,
+    })
       .then((responce) => resolve(responce))
       .catch((err) => reject(err));
   });
@@ -40,9 +45,18 @@ export default (state) => (next) => (action) => {
 
   next({ type: types.REQUEST });
 
-  const onSuccess = (responce) => {};
+  const onSuccess = (responce) => {
+    const resp = responce.data;
+    next({ type: types.SUCCESS, ...resp });
+  };
 
-  const onError = (err) => {};
+  const onError = (err) => {
+    const errorType = '';
+    if (err.data && err.status === 401) {
+      errorType = 'Unauthorised';
+    }
+    next({ type: types.FAIL, errorType });
+  };
 
   apiCall({ url, endpoint, method, body, headers })
     .then(onSuccess, onError)
