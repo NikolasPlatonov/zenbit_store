@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Cart.module.css';
 
-const Cart = ({ cart, deleteFromCart }) => {
+const Cart = ({ cart, totalPrice, deleteFromCart }) => {
   return (
     <div className={s.container}>
       <div className={s.title_container}>
@@ -32,7 +32,7 @@ const Cart = ({ cart, deleteFromCart }) => {
         })}
         <div className={s.total_container}>
           <div className={s.total_text}>TOTAL:</div>
-          <div className={s.total_price}></div>
+          <div className={s.total_price}>{totalPrice}</div>
         </div>
       </div>
       {/* <div className={s.total_price}>

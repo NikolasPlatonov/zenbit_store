@@ -113,6 +113,7 @@ const productsDefault = [
 const App = ({
   data,
   cart,
+  totalPrice,
   addToCart,
   cartCounter,
   deleteFromCart,
@@ -153,7 +154,11 @@ const App = ({
               <Route
                 path="/cart"
                 render={() => (
-                  <Cart cart={cart} deleteFromCart={deleteFromCart} />
+                  <Cart
+                    cart={cart}
+                    totalPrice={totalPrice}
+                    deleteFromCart={deleteFromCart}
+                  />
                 )}
               />
 
@@ -178,6 +183,7 @@ const mapStateToProps = (store) => {
   return {
     data: store.data.products,
     cart: store.cart.cart,
+    totalPrice: store.cart.totalPrice,
     cartCounter: store.cart.cartCounter,
     searchText: store.data.searchText,
   };
