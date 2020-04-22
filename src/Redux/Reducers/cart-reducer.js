@@ -33,7 +33,7 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         cart: [...state.cart.filter((item) => item.id !== action.id)],
         cartCounter: state.cartCounter - action.units,
-        totalPrice: state.totalPrice - action.data.price,
+        totalPrice: state.totalPrice - action.price * action.units,
       };
 
     default:
