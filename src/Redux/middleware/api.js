@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API_REQUEST } from './../actions/api-action';
-import { merger } from 'lodash';
+import { merge } from 'lodash';
 
 export const apiCall = ({
   url = 'https://shopserver.firebaseapp.com/',
@@ -25,7 +25,8 @@ export const apiCall = ({
 };
 
 const nextAction = (action, data) => {
-  const next = merger({}, action, data).delete[API_REQUEST];
+  const next = merge({}, action, data);
+  delete next[API_REQUEST];
   return next;
 };
 
@@ -33,8 +34,8 @@ export default (state) => (next) => (action) => {
   // next то же самое что и dispath
 
   if (action.type === API_REQUEST && !action.apiData) next(action);
-
-  const { url, endpoint, method, body, headers, types } = action.data; //перехватываем apiCall из api-action
+  console.log('action>>>>>>', action);
+  const { url, endpoint, method, body, headers, types } = action.apiData; //перехватываем apiCall из api-action
 
   nextAction(action, { type: types.REQUEST });
 
