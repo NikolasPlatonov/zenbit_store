@@ -18,7 +18,7 @@ const Cart = ({ cart, totalPrice, deleteFromCart }) => {
             <div className={s.order_container} key={item.id}>
               <button
                 className={s.order_delete}
-                onClick={() => deleteFromCart(item.id, item.units)}
+                onClick={() => deleteFromCart(item.id, item.units, item.price)}
               >
                 &#215;
               </button>

@@ -1,13 +1,7 @@
-import {
-  CHANGE_SEARCH_TEXT,
-  SEARCH_PRODUCTS,
-  SET_PRODUCTS,
-} from '../actions/products-action';
+import { SET_PRODUCTS } from '../actions/products-action';
 
 const initialState = {
   products: [],
-  searchText: '',
-  searchProducts: [],
   err: null,
   isLoader: false,
 };
@@ -25,20 +19,6 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         products: action.resp,
         isLoader: false,
-      };
-
-    case CHANGE_SEARCH_TEXT:
-      return {
-        ...state,
-        searchText: action.text,
-      };
-
-    case SEARCH_PRODUCTS:
-      return {
-        ...state,
-        searchProducts: state.products.filter((product) =>
-          product.name.toLowerCase().includes(state.searchText.toLowerCase())
-        ),
       };
 
     default:

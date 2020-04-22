@@ -6,8 +6,9 @@ export const addToCart = (product) => ({
   data: product,
 });
 
-export const deleteFromCart = (productId, productUnits) => ({
+export const deleteFromCart = (productId, productUnits, productPrice) => ({
   type: DELETE_FROM_CART,
   id: productId,
   units: productUnits,
+  price: productPrice,
 });
