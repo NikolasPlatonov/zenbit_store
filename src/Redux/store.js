@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import productsReducer from './reducers/products-reducer';
 import { cartReducer } from './reducers/cart-reducer';
-import searchReducer from './reducers/search-reducer';
+// import searchReducer from './reducers/search-reducer';
 
 const reducers = combineReducers({
   data: productsReducer,

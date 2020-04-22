@@ -1,18 +1,12 @@
 import React from 'react';
 import s from './Header.module.css';
-import cart from './../../assets/images/shopping-cart.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import search_icon from './../../assets/images/search_icon.png';
 
-export const Header = ({
-  cartCounter,
-  changeSearchText,
-  searchText,
-  searchProducts,
-}) => {
+const Header = ({ cartCounter, changeSearchText, searchText, history }) => {
   const keyPressed = (event) => {
     if (event.key === 'Enter') {
-      searchProducts();
+      history.push(`/search/?text=` + searchText);
     }
   };
 
@@ -25,15 +19,11 @@ export const Header = ({
           value={searchText}
           onChange={changeSearchText}
           className={s.input}
-          // onKeyPress={keyPressed}
+          onKeyPress={keyPressed}
         />
 
-        {/* <button className={s.search_btn} onClick={searchProducts}>
-          <img alt="search_icon" src={search_icon} />
-        </button> */}
-
         <NavLink to={`/search/?text=` + searchText}>
-          <div className={s.search_btn} onClick={searchProducts}>
+          <div className={s.search_btn}>
             <img alt="search_icon" src={search_icon} />
           </div>
         </NavLink>
@@ -78,3 +68,5 @@ export const Header = ({
     </div>
   );
 };
+
+export default withRouter(Header);

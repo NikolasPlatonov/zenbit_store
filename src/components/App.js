@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react';
-import './App.css';
-import { ProductList } from 'components/ProductList/ProductList';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import ProductDetails from './ProductDetails/ProductDetails';
-import { Header } from './Header/Header';
-import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
-import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
-import {
-  changeSearchText,
-  searchProducts,
-  onSetProducts,
-} from './../redux/actions/products-action';
+import './App.css';
+
+import ProductDetails from './ProductDetails/ProductDetails';
+import Header from './Header/Header';
+import Cart from './Cart/Cart';
+import { ProductList } from 'components/ProductList/ProductList';
 import SignUp from './Login/SignUp';
-import { Search } from './Search/Search';
+import Search from './Search/Search';
 import { Help } from './Help/Help';
 import { Blog } from './Blog/Blog';
 import { Home } from './Home/Home';
+
+import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
+import {
+  changeSearchText,
+  onSetProducts,
+} from './../redux/actions/products-action';
 
 const productsDefault = [
   {
@@ -117,8 +118,6 @@ const App = ({
   deleteFromCart,
   searchText,
   changeSearchText,
-  searchProducts,
-  searchProductsList,
   onSetProducts,
 }) => {
   useEffect(() => {
@@ -134,22 +133,13 @@ const App = ({
               cartCounter={cartCounter}
               changeSearchText={changeSearchText}
               searchText={searchText}
-              searchProducts={searchProducts}
             />
           </div>
           <div className="products_container">
             <div>
-              <Route
-                path="/search"
-                render={() => (
-                  <Search
-                    searchProducts={searchProductsList}
-                    addToCart={addToCart}
-                  />
-                )}
-              />
+              <Route path="/search" render={() => <Search />} />
 
-              <Route exact path="/home" render={() => <Home />} />
+              <Route path="/home" render={() => <Home />} />
 
               <Route
                 path="/products"
@@ -190,7 +180,6 @@ const mapStateToProps = (store) => {
     cart: store.cart.cart,
     cartCounter: store.cart.cartCounter,
     searchText: store.data.searchText,
-    searchProductsList: store.data.searchProducts,
   };
 };
 
@@ -198,6 +187,5 @@ export default connect(mapStateToProps, {
   addToCart,
   deleteFromCart,
   changeSearchText,
-  searchProducts,
   onSetProducts,
 })(App);
