@@ -2,7 +2,9 @@ import React from 'react';
 import s from './Cart.module.css';
 
 const Cart = ({ cart, totalPrice, deleteFromCart }) => {
-  return (
+  return !cart.length ? (
+    <div className={s.error}>YOUR CART IS EMPTY</div>
+  ) : (
     <div className={s.container}>
       <div className={s.title_container}>
         <div className={s.title}>Product</div>
@@ -30,15 +32,13 @@ const Cart = ({ cart, totalPrice, deleteFromCart }) => {
             </div>
           );
         })}
+
         <div className={s.total_container}>
           <div className={s.total_text}>TOTAL:</div>
           <div className={s.total_price}>{totalPrice}</div>
         </div>
       </div>
-      {/* <div className={s.total_price}>
-        <div className={s.total_text}>TOTAL:</div>
-        <div></div>
-      </div> */}
+
       <div className={s.btn_container}>
         <button className={s.button}>PROCEED TO CHECKOUT</button>
       </div>

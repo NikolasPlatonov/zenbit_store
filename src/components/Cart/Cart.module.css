@@ -11,6 +11,14 @@
   justify-items: center;
 }
 
+.error {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ff5e3a;
+  text-align: center;
+}
+
 .btn_container {
   display: grid;
   grid-template-columns: 1fr;
@@ -55,7 +63,7 @@
 }
 
 .order_delete {
-  color: red;
+  color: #ff5e3a;
   font-size: 20px;
   font-weight: bold;
 }
