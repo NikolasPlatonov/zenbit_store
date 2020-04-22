@@ -14,7 +14,28 @@
 .btn_container {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: right;
+  padding-top: 10px;
+}
+
+.total_container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+.total_text {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: right;
+}
+
+.total_price {
+  color: green;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: center;
 }
 
 /* next css file */
@@ -28,7 +49,7 @@
 
 .title {
   color: #5f7e96;
-  font-weight: normal;
+  font-weight: 700;
   font-style: inherit;
   font-size: 13px;
 }

@@ -30,7 +30,15 @@ const Cart = ({ cart, deleteFromCart }) => {
             </div>
           );
         })}
+        <div className={s.total_container}>
+          <div className={s.total_text}>TOTAL:</div>
+          <div className={s.total_price}></div>
+        </div>
       </div>
+      {/* <div className={s.total_price}>
+        <div className={s.total_text}>TOTAL:</div>
+        <div></div>
+      </div> */}
       <div className={s.btn_container}>
         <button className={s.button}>PROCEED TO CHECKOUT</button>
       </div>
