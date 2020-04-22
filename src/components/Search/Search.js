@@ -21,7 +21,7 @@ const Search = ({
   ) : (
     <div className={s.products_list}>
       {searchProductsList.map((product) => (
-        <div key={product.id}>
+        <div key={product.name + Math.random()}>
           <ProductCard el={product} addToCart={addToCart} />
         </div>
       ))}
