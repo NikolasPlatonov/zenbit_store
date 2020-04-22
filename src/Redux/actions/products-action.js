@@ -15,6 +15,5 @@ export const searchProducts = () => ({
 });
 
 export const onSetProducts = () => {
-  console.log('apiActionCall>>>>>>');
   return apiActionCall({ types: SET_PRODUCTS, endpoint: '/get-products' });
 };

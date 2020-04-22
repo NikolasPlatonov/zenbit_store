@@ -14,8 +14,8 @@ const Search = ({
 }) => {
   useEffect(() => {
     searchProducts();
-  }, [location.search.length]);
-  console.log('withRouter-location', location);
+  }, [location.search]);
+
   return !searchProductsList.length ? (
     <div className={s.error}>'Nothing found, try changing your query!'</div>
   ) : (
@@ -28,20 +28,6 @@ const Search = ({
     </div>
   );
 };
-
-// export const Search = ({ searchProducts, addToCart }) => {
-//   return searchProducts.length === 0 ? (
-//     <div className={s.error}>'Nothing found, try changing your query!'</div>
-//   ) : (
-//     <div className={s.products_list}>
-//       {searchProducts.map((product) => (
-//         <div key={product.id}>
-//           <ProductCard el={product} addToCart={addToCart} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
 
 const mapStateToProps = (store) => {
   return {

@@ -15,14 +15,12 @@ const initialState = {
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PRODUCTS.REQUEST:
-      console.log('productsReducer -> REQUEST', action);
       return {
         ...state,
         isLoader: true,
       };
 
     case SET_PRODUCTS.SUCCESS:
-      console.log('productsReducer -> SUCCESS', action);
       return {
         ...state,
         products: action.resp,

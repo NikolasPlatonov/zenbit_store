@@ -33,7 +33,6 @@ const App = ({
   isLoader,
 }) => {
   useEffect(() => {
-    // !data && onSetProducts(productsDefault);
     !data.length && onSetProducts();
   }, []);
 
