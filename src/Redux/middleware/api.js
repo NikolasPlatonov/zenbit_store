@@ -29,12 +29,12 @@ export const apiCall = ({
   });
 };
 
-const nextAction = (action, data) => {
-  const next = merge({}, action, data);
-  console.log('nextAction -> next', next);
-  delete next[API_REQUEST];
-  return next;
-};
+// const nextAction = (action, data) => {
+//   const next = merge({}, action, data);
+//   console.log('nextAction -> next', next);
+//   delete next[API_REQUEST];
+//   return next;
+// };
 
 export default (state) => (next) => (action) => {
   // next то же самое что и dispath
@@ -46,8 +46,9 @@ export default (state) => (next) => (action) => {
   next({ type: types.REQUEST });
 
   const onSuccess = (responce) => {
-    const resp = responce.data;
-    next({ type: types.SUCCESS, ...resp });
+    console.log('onSuccess -> responce', responce.data.products);
+    const resp = responce.data.products;
+    next({ type: types.SUCCESS, resp });
   };
 
   const onError = (err) => {
