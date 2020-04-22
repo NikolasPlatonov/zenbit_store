@@ -1,6 +1,9 @@
+import { apiActionCall } from './../actions/api-action';
+import { createAsyncAction } from './../../components/Helpers/redux';
+
 export const CHANGE_SEARCH_TEXT = 'CHANGE-SEARCH-TEXT';
 export const SEARCH_PRODUCTS = 'SEARCH-PRODUCTS';
-export const SET_PRODUCTS = 'SET-PRODUCTS';
+export const SET_PRODUCTS = createAsyncAction('SET-PRODUCTS');
 
 export const changeSearchText = (text) => ({
   type: CHANGE_SEARCH_TEXT,
@@ -11,7 +14,7 @@ export const searchProducts = () => ({
   type: SEARCH_PRODUCTS,
 });
 
-export const onSetProducts = (data) => ({
-  type: SET_PRODUCTS,
-  data: data,
-});
+export const onSetProducts = () => {
+  console.log('apiActionCall>>>>>>');
+  return apiActionCall({ types: SET_PRODUCTS, endpoint: '/get-products' });
+};

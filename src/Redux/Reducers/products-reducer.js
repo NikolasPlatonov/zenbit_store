@@ -5,6 +5,7 @@ import {
 } from '../actions/products-action';
 
 const initialState = {
+  products: [],
   searchText: '',
   searchProducts: [],
 };
