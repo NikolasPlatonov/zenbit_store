@@ -18,6 +18,8 @@ import {
   changeSearchText,
   onSetProducts,
 } from './../redux/actions/products-action';
+import Preloader from '../common/preloader/Preloader';
+import store from '../redux/store';
 
 // const productsDefault = [
 //   {
@@ -120,6 +122,7 @@ const App = ({
   searchText,
   changeSearchText,
   onSetProducts,
+  isLoader,
 }) => {
   useEffect(() => {
     // !data && onSetProducts(productsDefault);
@@ -129,6 +132,7 @@ const App = ({
   return (
     <Router>
       <div className="content_main">
+        <div className="preloader">{isLoader && <Preloader />}</div>
         <div className="content">
           <div className="header">
             <Header
@@ -137,6 +141,7 @@ const App = ({
               searchText={searchText}
             />
           </div>
+
           <div className="products_container">
             <div>
               <Route path="/search" render={() => <Search />} />
@@ -187,6 +192,7 @@ const mapStateToProps = (store) => {
     totalPrice: store.cart.totalPrice,
     cartCounter: store.cart.cartCounter,
     searchText: store.data.searchText,
+    isLoader: store.data.isLoader,
   };
 };
 

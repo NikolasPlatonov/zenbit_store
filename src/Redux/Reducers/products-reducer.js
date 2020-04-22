@@ -8,14 +8,17 @@ const initialState = {
   products: [],
   searchText: '',
   searchProducts: [],
+  err: null,
+  isLoader: false,
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_PRODUCTS:
+    case SET_PRODUCTS.REQUEST:
+      console.log('productsReducer -> action', action);
       return {
         ...state,
-        products: action.data,
+        isLoader: true,
       };
 
     case CHANGE_SEARCH_TEXT:

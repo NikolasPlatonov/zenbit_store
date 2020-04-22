@@ -1,7 +1,13 @@
 .content_main {
   display: grid;
   grid-template-rows: 150px 1fr;
-  /* justify-content: center; */
+  position: relative;
+}
+
+.preloader {
+  position: absolute;
+  right: 45%;
+  margin-top: 270px;
 }
 
 .content {
