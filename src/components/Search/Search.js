@@ -3,7 +3,7 @@ import s from './Search.module.css';
 import ProductCard from '../ProductCard/ProductCard';
 import { connect } from 'react-redux';
 import { addToCart } from './../../redux/actions/cart-action';
-import { searchProducts } from './../../redux/actions/search-action';
+import { searchProducts } from './../../redux/actions/products-action';
 import { withRouter } from 'react-router-dom';
 
 const Search = ({

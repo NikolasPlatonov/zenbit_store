@@ -14,9 +14,12 @@ import { Blog } from './Blog/Blog';
 import { Home } from './Home/Home';
 
 import { addToCart, deleteFromCart } from './../redux/actions/cart-action';
-import { onSetProducts } from './../redux/actions/products-action';
-import { changeSearchText } from './../redux/actions/search-action';
+import {
+  changeSearchText,
+  onSetProducts,
+} from './../redux/actions/products-action';
 import Preloader from '../common/preloader/Preloader';
+import store from '../redux/store';
 
 const App = ({
   data,
