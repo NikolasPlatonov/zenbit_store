@@ -3,6 +3,7 @@ import s from './ProductDetails.module.css';
 import { withRouter } from 'react-router-dom';
 
 const ProductDetails = ({ data, addToCart, match }) => {
+  console.log('ProductDetails -> props', data);
   const details = data.find((item) => item.id === match.params.id);
 
   return (

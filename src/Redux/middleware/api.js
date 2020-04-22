@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_REQUEST } from './../actions/api-action';
+import { merge } from 'lodash';
 
 export const apiCall = ({
   url = 'https://shopserver.firebaseapp.com',
@@ -8,7 +9,16 @@ export const apiCall = ({
   body = {},
   headers = {},
 }) => {
+  // const methodUpgrated = method.toLowerCase();
+
+  console.log('url>>>>>', url);
+  // axios.create({
+  //   baseURL: url,
+  //   headers,
+  // });
+
   return new Promise((resolve, reject) => {
+    // resolve === всё ОК; reject === всё плохо
     axios({
       url: `https://shopserver.firebaseapp.com${endpoint}`,
       method,
@@ -19,13 +29,24 @@ export const apiCall = ({
   });
 };
 
+// const nextAction = (action, data) => {
+//   const next = merge({}, action, data);
+//   console.log('nextAction -> next', next);
+//   delete next[API_REQUEST];
+//   return next;
+// };
+
 export default (state) => (next) => (action) => {
+  // next то же самое что и dispath
+
   if (action.type !== API_REQUEST || !action.apiData) return next(action);
-  const { url, endpoint, method, body, headers, types } = action.apiData;
+  console.log('ACTION>>>>>>api', action);
+  const { url, endpoint, method, body, headers, types } = action.apiData; //перехватываем apiCall из api-action
 
   next({ type: types.REQUEST });
 
   const onSuccess = (responce) => {
+    console.log('onSuccess -> responce', responce.data.products);
     const resp = responce.data.products;
     next({ type: types.SUCCESS, resp });
   };
@@ -40,5 +61,5 @@ export default (state) => (next) => (action) => {
 
   apiCall({ url, endpoint, method, body, headers })
     .then(onSuccess, onError)
-    .catch((err) => console.log('ERROR', err));
+    .catch((err) => console.log('err>>>>>>', err));
 };
