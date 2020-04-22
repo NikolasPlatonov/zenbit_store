@@ -19,12 +19,13 @@ export const cartReducer = (state = initialState, action) => {
               { ...existingProduct, units: existingProduct.units + 1 },
             ],
             cartCounter: state.cartCounter + 1,
+            totalPrice: state.totalPrice + action.data.price,
           }
         : {
             ...state,
             cart: [...state.cart, { ...action.data, units: 1 }],
             cartCounter: state.cartCounter + 1,
-            totalPrice: 0,
+            totalPrice: state.totalPrice + action.data.price,
           };
 
     case DELETE_FROM_CART:
@@ -32,6 +33,7 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         cart: [...state.cart.filter((item) => item.id !== action.id)],
         cartCounter: state.cartCounter - action.units,
+        totalPrice: state.totalPrice - action.data.price,
       };
 
     default:
