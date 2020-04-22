@@ -39,8 +39,8 @@ export const apiCall = ({
 export default (state) => (next) => (action) => {
   // next то же самое что и dispath
 
-  if (action.type === API_REQUEST && !action.apiData) next(action);
-  console.log('action>>>>>>api', action);
+  if (action.type !== API_REQUEST || !action.apiData) return next(action);
+  console.log('ACTION>>>>>>api', action);
   const { url, endpoint, method, body, headers, types } = action.apiData; //перехватываем apiCall из api-action
 
   next({ type: types.REQUEST });
