@@ -3,7 +3,14 @@ import s from './Header.module.css';
 import { NavLink, withRouter } from 'react-router-dom';
 import search_icon from './../../assets/images/search_icon.png';
 
-const Header = ({ cartCounter, changeSearchText, searchText, history }) => {
+const Header = ({
+  cartCounter,
+  changeSearchText,
+  searchText,
+  history,
+  location,
+}) => {
+  console.log('Header -> history', location);
   const keyPressed = (event) => {
     if (event.key === 'Enter') {
       history.push(`/search/?text=` + searchText);
@@ -30,11 +37,6 @@ const Header = ({ cartCounter, changeSearchText, searchText, history }) => {
       </div>
 
       <div className={s.menu_container}>
-        <div className={s.menu_btn}>
-          <NavLink to="zenbit_store/home" activeClassName={s.active}>
-            HOME
-          </NavLink>
-        </div>
         <div className={s.menu_btn}>
           <NavLink to="/products" activeClassName={s.active}>
             SHOP
