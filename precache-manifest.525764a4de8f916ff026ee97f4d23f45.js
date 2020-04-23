@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d46be9e47a37979fc7e2eefb6dcce649",
+    "revision": "3d081a481ed76d34a587626147590b89",
     "url": "/zenbit_store/index.html"
   },
   {
-    "revision": "df23e9a900c4062cab8c",
+    "revision": "d6e39ea70e443920a5c5",
     "url": "/zenbit_store/static/css/main.88ac9c7f.chunk.css"
   },
   {
-    "revision": "e3c57cbe429803eebbbe",
-    "url": "/zenbit_store/static/js/2.1668e5f1.chunk.js"
+    "revision": "f545e14ca38579ba6e75",
+    "url": "/zenbit_store/static/js/2.1ea01495.chunk.js"
   },
   {
     "revision": "77e7f328dacc981fca681ee4ae94d669",
-    "url": "/zenbit_store/static/js/2.1668e5f1.chunk.js.LICENSE.txt"
+    "url": "/zenbit_store/static/js/2.1ea01495.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df23e9a900c4062cab8c",
-    "url": "/zenbit_store/static/js/main.5a208d7d.chunk.js"
+    "revision": "d6e39ea70e443920a5c5",
+    "url": "/zenbit_store/static/js/main.df0bcd72.chunk.js"
   },
   {
     "revision": "556f1e05a5abe7bd32dc",
