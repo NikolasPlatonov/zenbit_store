@@ -38,62 +38,60 @@ const App = ({
 
   return (
     <Router>
-      <div>
-        <Switch>
-          <div className="content_main">
-            <div className="preloader">{isLoader && <Preloader />}</div>
-            <div className="content">
-              <div className="header">
-                <Header
-                  cartCounter={cartCounter}
-                  changeSearchText={changeSearchText}
-                  searchText={searchText}
+      <Switch>
+        <div className="content_main">
+          <div className="preloader">{isLoader && <Preloader />}</div>
+          <div className="content">
+            <div className="header">
+              <Header
+                cartCounter={cartCounter}
+                changeSearchText={changeSearchText}
+                searchText={searchText}
+              />
+            </div>
+
+            <div className="products_container">
+              <div>
+                <Route path="/search" render={() => <Search />} />
+
+                <Route exact path="/" render={() => <Home />} />
+
+                <Route
+                  path="/products"
+                  render={() => (
+                    <ProductList data={data} addToCart={addToCart} />
+                  )}
                 />
+
+                <Route path="/help" render={() => <Help />} />
+
+                <Route path="/blog" render={() => <Blog />} />
+
+                <Route
+                  path="/cart"
+                  render={() => (
+                    <Cart
+                      cart={cart}
+                      totalPrice={totalPrice}
+                      deleteFromCart={deleteFromCart}
+                    />
+                  )}
+                />
+
+                <Route
+                  path="/product/:id"
+                  render={() => (
+                    <ProductDetails data={data} addToCart={addToCart} />
+                  )}
+                />
+
+                <Route path="/login" render={() => <SignUp />} />
               </div>
-
-              <div className="products_container">
-                <div>
-                  <Route path="/search" render={() => <Search />} />
-
-                  <Route path="/" render={() => <Home />} />
-
-                  <Route
-                    path="/products"
-                    render={() => (
-                      <ProductList data={data} addToCart={addToCart} />
-                    )}
-                  />
-
-                  <Route path="/help" render={() => <Help />} />
-
-                  <Route path="/blog" render={() => <Blog />} />
-
-                  <Route
-                    path="/cart"
-                    render={() => (
-                      <Cart
-                        cart={cart}
-                        totalPrice={totalPrice}
-                        deleteFromCart={deleteFromCart}
-                      />
-                    )}
-                  />
-
-                  <Route
-                    path="/product/:id"
-                    render={() => (
-                      <ProductDetails data={data} addToCart={addToCart} />
-                    )}
-                  />
-
-                  <Route path="/login" render={() => <SignUp />} />
-                </div>
-                <div></div>
-              </div>
+              <div></div>
             </div>
           </div>
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 };
