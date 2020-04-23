@@ -53,7 +53,7 @@ const App = ({
             <div>
               <Route path="/search" render={() => <Search />} />
 
-              <Route exact path="/" render={() => <Home />} />
+              <Route path="/zenbit_store" render={() => <Home />} />
 
               <Route
                 path="/products"
