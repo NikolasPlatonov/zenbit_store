@@ -56,6 +56,7 @@ const App = ({
               <Route path="/home" render={() => <Home />} />
 
               <Route
+                exact
                 path="/products"
                 render={() => <ProductList data={data} addToCart={addToCart} />}
               />
