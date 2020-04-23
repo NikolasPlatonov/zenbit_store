@@ -2,7 +2,7 @@
   "name": "zenbit_store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NikolasPlatonov.github.io/zenbit_store",
+  "homepage": "https://NikolasPlatonov.github.io/zenbit_store/home",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
