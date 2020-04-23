@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/zenbit_store/static/css/main.88ac9c7f.chunk.css",
-    "main.js": "/zenbit_store/static/js/main.d668a48d.chunk.js",
-    "main.js.map": "/zenbit_store/static/js/main.d668a48d.chunk.js.map",
+    "main.js": "/zenbit_store/static/js/main.5c6b3545.chunk.js",
+    "main.js.map": "/zenbit_store/static/js/main.5c6b3545.chunk.js.map",
     "runtime-main.js": "/zenbit_store/static/js/runtime-main.a02a1996.js",
     "runtime-main.js.map": "/zenbit_store/static/js/runtime-main.a02a1996.js.map",
     "static/js/2.1668e5f1.chunk.js": "/zenbit_store/static/js/2.1668e5f1.chunk.js",
     "static/js/2.1668e5f1.chunk.js.map": "/zenbit_store/static/js/2.1668e5f1.chunk.js.map",
     "index.html": "/zenbit_store/index.html",
-    "precache-manifest.b7fcba95e0cd8cb0699f203d1ed1b0ea.js": "/zenbit_store/precache-manifest.b7fcba95e0cd8cb0699f203d1ed1b0ea.js",
+    "precache-manifest.853de5dd823dec1eec32c34098c1a801.js": "/zenbit_store/precache-manifest.853de5dd823dec1eec32c34098c1a801.js",
     "service-worker.js": "/zenbit_store/service-worker.js",
     "static/css/main.88ac9c7f.chunk.css.map": "/zenbit_store/static/css/main.88ac9c7f.chunk.css.map",
     "static/js/2.1668e5f1.chunk.js.LICENSE.txt": "/zenbit_store/static/js/2.1668e5f1.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.a02a1996.js",
     "static/js/2.1668e5f1.chunk.js",
     "static/css/main.88ac9c7f.chunk.css",
-    "static/js/main.d668a48d.chunk.js"
+    "static/js/main.5c6b3545.chunk.js"
   ]
 }
