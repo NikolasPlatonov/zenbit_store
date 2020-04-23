@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/zenbit_store/static/css/main.393630b0.chunk.css",
+    "main.js": "/zenbit_store/static/js/main.cf4403d9.chunk.js",
+    "main.js.map": "/zenbit_store/static/js/main.cf4403d9.chunk.js.map",
+    "runtime-main.js": "/zenbit_store/static/js/runtime-main.a02a1996.js",
+    "runtime-main.js.map": "/zenbit_store/static/js/runtime-main.a02a1996.js.map",
+    "static/js/2.62003eff.chunk.js": "/zenbit_store/static/js/2.62003eff.chunk.js",
+    "static/js/2.62003eff.chunk.js.map": "/zenbit_store/static/js/2.62003eff.chunk.js.map",
+    "index.html": "/zenbit_store/index.html",
+    "precache-manifest.5ad4675d9e0429c8168cd58ff7473b74.js": "/zenbit_store/precache-manifest.5ad4675d9e0429c8168cd58ff7473b74.js",
+    "service-worker.js": "/zenbit_store/service-worker.js",
+    "static/css/main.393630b0.chunk.css.map": "/zenbit_store/static/css/main.393630b0.chunk.css.map",
+    "static/js/2.62003eff.chunk.js.LICENSE.txt": "/zenbit_store/static/js/2.62003eff.chunk.js.LICENSE.txt",
+    "static/media/cycle_arrow_icon.png": "/zenbit_store/static/media/cycle_arrow_icon.b47e2063.png",
+    "static/media/house_icon.png": "/zenbit_store/static/media/house_icon.9a614b21.png",
+    "static/media/preloader.gif": "/zenbit_store/static/media/preloader.7d5296ba.gif",
+    "static/media/search_icon.png": "/zenbit_store/static/media/search_icon.860e1bc4.png",
+    "static/media/shopping-cart.png": "/zenbit_store/static/media/shopping-cart.903178f0.png",
+    "static/media/wallet_icon.png": "/zenbit_store/static/media/wallet_icon.a33035bf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a02a1996.js",
+    "static/js/2.62003eff.chunk.js",
+    "static/css/main.393630b0.chunk.css",
+    "static/js/main.cf4403d9.chunk.js"
+  ]
+}
