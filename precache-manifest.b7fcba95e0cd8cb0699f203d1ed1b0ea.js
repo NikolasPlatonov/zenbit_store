@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7f6f6dab3e3d2d0275278e311ffe1003",
+    "revision": "7d5315913c8c160e993413be54d6ac0a",
     "url": "/zenbit_store/index.html"
   },
   {
-    "revision": "7538737117f60e245ad9",
-    "url": "/zenbit_store/static/css/main.393630b0.chunk.css"
+    "revision": "36f1faf5a67c4a0bd500",
+    "url": "/zenbit_store/static/css/main.88ac9c7f.chunk.css"
   },
   {
-    "revision": "a989f3b0cc66146c520a",
-    "url": "/zenbit_store/static/js/2.62003eff.chunk.js"
+    "revision": "e3c57cbe429803eebbbe",
+    "url": "/zenbit_store/static/js/2.1668e5f1.chunk.js"
   },
   {
     "revision": "77e7f328dacc981fca681ee4ae94d669",
-    "url": "/zenbit_store/static/js/2.62003eff.chunk.js.LICENSE.txt"
+    "url": "/zenbit_store/static/js/2.1668e5f1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7538737117f60e245ad9",
-    "url": "/zenbit_store/static/js/main.cf4403d9.chunk.js"
+    "revision": "36f1faf5a67c4a0bd500",
+    "url": "/zenbit_store/static/js/main.d668a48d.chunk.js"
   },
   {
     "revision": "556f1e05a5abe7bd32dc",
