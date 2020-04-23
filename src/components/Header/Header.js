@@ -31,7 +31,7 @@ const Header = ({ cartCounter, changeSearchText, searchText, history }) => {
 
       <div className={s.menu_container}>
         <div className={s.menu_btn}>
-          <NavLink to="/home" activeClassName={s.active}>
+          <NavLink to="zenbit_store/home" activeClassName={s.active}>
             HOME
           </NavLink>
         </div>
