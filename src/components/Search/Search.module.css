@@ -1,0 +1,9 @@
+.products_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.error {
+  text-align: center;
+  color: red;
+}

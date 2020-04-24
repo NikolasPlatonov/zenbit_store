@@ -1,14 +1,30 @@
+.content_main {
+  display: grid;
+  grid-template-rows: 150px 1fr;
+  position: relative;
+}
+
+.preloader {
+  position: absolute;
+  right: 45%;
+  margin-top: 270px;
+}
+
 .content {
   display: grid;
-  grid-template-rows: 100px 1fr;
-  padding-left: 10%;
+  grid-template-columns: 1fr;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .header {
-  margin: 1em;
+  margin-top: 3vw;
+  align-items: stretch;
+  margin-bottom: 3vw;
 }
 
 .products_container {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr;
+  min-width: 60%;
 }

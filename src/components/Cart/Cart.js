@@ -1,8 +1,10 @@
 import React from 'react';
 import s from './Cart.module.css';
 
-const Cart = ({ cart, deleteFromCart }) => {
-  return (
+const Cart = ({ cart, totalPrice, deleteFromCart }) => {
+  return !cart.length ? (
+    <div className={s.error}>YOUR CART IS EMPTY</div>
+  ) : (
     <div className={s.container}>
       <div className={s.title_container}>
         <div className={s.title}>Product</div>
@@ -16,7 +18,7 @@ const Cart = ({ cart, deleteFromCart }) => {
             <div className={s.order_container} key={item.id}>
               <button
                 className={s.order_delete}
-                onClick={() => deleteFromCart(item.id, item.units)}
+                onClick={() => deleteFromCart(item.id, item.units, item.price)}
               >
                 &#215;
               </button>
@@ -30,7 +32,13 @@ const Cart = ({ cart, deleteFromCart }) => {
             </div>
           );
         })}
+
+        <div className={s.total_container}>
+          <div className={s.total_text}>TOTAL:</div>
+          <div className={s.total_price}>{totalPrice}</div>
+        </div>
       </div>
+
       <div className={s.btn_container}>
         <button className={s.button}>PROCEED TO CHECKOUT</button>
       </div>

@@ -1,0 +1,50 @@
+.main_container {
+  display: grid;
+  grid-template-rows: 70px 1fr 1fr;
+}
+
+.main_title {
+  color: #5f7e96;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 35vw;
+  min-height: 15vw;
+  text-align: center;
+  align-content: center;
+}
+
+.item_container {
+  display: grid;
+  grid-template-rows: 1fr 70px;
+}
+
+.item_photo img {
+  width: 20vw;
+  height: auto;
+}
+
+.text {
+  color: #5f7e96;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 20px;
+  text-align: center;
+}
+
+.item_btn {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 10px;
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+}

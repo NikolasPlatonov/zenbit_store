@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.help_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 35vw;
+  min-height: 15vw;
+  text-align: center;
+  align-content: center;
+}
+
+.help_item {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  cursor: pointer;
+}
+.help_text {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  align-content: center;
+  color: #5f7e96;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 13px;
+}
+
+.help_img img {
+  height: 50px;
+}

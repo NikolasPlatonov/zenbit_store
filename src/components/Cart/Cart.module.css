@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-rows: 50px 1fr 50px;
+  margin-top: 30px;
 }
 
 .title_container {
@@ -10,10 +11,39 @@
   justify-items: center;
 }
 
+.error {
+  font-style: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ff5e3a;
+  text-align: center;
+}
+
 .btn_container {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: right;
+  padding-top: 10px;
+}
+
+.total_container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+.total_text {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: right;
+}
+
+.total_price {
+  color: green;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: center;
 }
 
 /* next css file */
@@ -25,8 +55,15 @@
   align-items: center;
 }
 
+.title {
+  color: #5f7e96;
+  font-weight: 700;
+  font-style: inherit;
+  font-size: 13px;
+}
+
 .order_delete {
-  color: red;
+  color: #ff5e3a;
   font-size: 20px;
   font-weight: bold;
 }

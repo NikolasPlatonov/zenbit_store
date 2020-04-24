@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  grid-template-rows: 80px 2fr;
+  justify-content: center;
+}
+
+.form_container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  min-width: 25vw;
+  text-align: start;
+}
+
+.main_title {
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 30px;
+  text-align: center;
+}
+
+.form_title {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  color: #5f7e96;
+  font-weight: bold;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: left;
+}
+
+.form_input {
+  color: #5f7e96;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 15px;
+  text-align: left;
+}
+
+.field_error {
+  color: #ff5e3a;
+  font-size: small;
+}
+
+.btn_container {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: 2vw;
+}
+
+.button {
+  width: 100%;
+}

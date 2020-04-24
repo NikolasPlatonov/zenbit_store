@@ -1,39 +1,74 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './Header.module.css';
-import cart from './../../assets/images/shopping-cart.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import search_icon from './../../assets/images/search_icon.png';
 
-export const Header = ({ cartCounter, changeSearchText, searchText }) => {
-  console.log('Header -> searchText', searchText);
+const Header = ({
+  cartCounter,
+  changeSearchText,
+  searchText,
+  history,
+  location,
+}) => {
+  console.log('Header -> history', location);
+  const keyPressed = (event) => {
+    if (event.key === 'Enter') {
+      history.push(`/search/?text=` + searchText);
+    }
+  };
+
   return (
     <div className={s.container}>
-      <div className={s.search}>
+      <div className={s.search_container}>
         <input
-          type="text"
-          placeholder="Search product here..."
+          type="search"
+          placeholder="Search..."
           value={searchText}
           onChange={changeSearchText}
           className={s.input}
+          onKeyPress={keyPressed}
         />
+
+        <NavLink to={`/search/?text=` + searchText}>
+          <div className={s.search_btn}>
+            <img alt="search_icon" src={search_icon} />
+          </div>
+        </NavLink>
       </div>
 
       <div className={s.menu_container}>
         <div className={s.menu_btn}>
-          <NavLink to="/products">SHOP</NavLink>
+          <NavLink to="/products" activeClassName={s.active}>
+            SHOP
+          </NavLink>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/blog">BLOG</NavLink>
+          <NavLink to="/blog" activeClassName={s.active}>
+            BLOG
+          </NavLink>
         </div>
         <div className={s.menu_btn}>
-          <NavLink to="/contacts">CONTACT US</NavLink>
+          <NavLink to="/help" activeClassName={s.active}>
+            HELP
+          </NavLink>
+        </div>
+
+        <div className={s.menu_btn}>
+          <NavLink to="/cart">
+            <div className={s.cart_image}>
+              <div className={s.cart_count}>{cartCounter}</div>
+            </div>
+          </NavLink>
+        </div>
+
+        <div className={s.menu_btn}>
+          <NavLink to="/login" activeClassName={s.active}>
+            ACCOUNT
+          </NavLink>
         </div>
       </div>
-      <div className={s.cart}>
-        <NavLink to="/cart">
-          <img alt="cart_icon" src={cart} />
-        </NavLink>
-      </div>
-      <div className={s.cart_count}>{cartCounter} products </div>
     </div>
   );
 };
+
+export default withRouter(Header);

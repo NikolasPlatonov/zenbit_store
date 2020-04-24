@@ -1,42 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './ProductCard.module.css';
-import ReactCardFlip from 'react-card-flip';
-import sold_out from '../../assets/images/sold-out.png';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addToCart } from '../../redux/actions/cart-action';
 
-export const ProductCard = ({ el, addToCart }) => {
-  const [isFlipped, changeFlipped] = useState(false);
-  const onChangeFlipped = () => {
-    changeFlipped(!isFlipped);
-  };
-
+const ProductCard = ({ el, addToCart }) => {
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-      <div className={s.container}>
-        <div className={s.photo_container}>
-          <NavLink to={`/product/` + el.id}>
-            <img alt="product_image" src={el.image} className={s.photo} />
-          </NavLink>
-        </div>
-        <div className={s.name}>{el.name}</div>
-        <div className={s.price} onClick={onChangeFlipped}>
-          {el.price} USD
-        </div>
-        <button className={s.button} onClick={() => addToCart(el)}>
-          ADD TO CART
-        </button>
+    <div className={s.container_main}>
+      <div className={s.photo_container}>
+        <NavLink to={`/product/` + el.id}>
+          <img alt="product_image" src={el.image} className={s.photo} />
+        </NavLink>
       </div>
-
-      <div className={s.container}>
-        <div className={s.photo_container}>
-          <img alt="sold_out" src={sold_out} className={s.photo} />
-        </div>
+      <div className={s.info_container}>
         <div className={s.name}>{el.name}</div>
-        <div className={s.price} onClick={onChangeFlipped}>
-          {el.price} USD
+        <div className={s.price}>{el.price} USD</div>
+        <div className={s.button}>
+          <button onClick={() => addToCart(el)}>ADD TO CART</button>
         </div>
-        <button className={s.button}>ADD TO CART</button>
       </div>
-    </ReactCardFlip>
+    </div>
   );
 };
+
+let mapStateToProps = (state) => ({});
+
+export default connect(mapStateToProps, { addToCart })(ProductCard);

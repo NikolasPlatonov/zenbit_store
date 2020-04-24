@@ -2,8 +2,8 @@ import React from 'react';
 import s from './ProductDetails.module.css';
 import { withRouter } from 'react-router-dom';
 
-const ProductDetails = (props) => {
-  const details = props.data.find((item) => item.id === props.match.params.id);
+const ProductDetails = ({ data, addToCart, match }) => {
+  const details = data.find((item) => item.id === match.params.id);
 
   return (
     <div className={s.container}>
@@ -15,7 +15,7 @@ const ProductDetails = (props) => {
         <div className={s.description}>
           <div className={s.origin}>{details.origin}</div>
           <div className={s.price}>{details.price} USD</div>
-          <button onClick={() => props.addToCart(details)}>ADD TO CART</button>
+          <button onClick={() => addToCart(details)}>ADD TO CART</button>
         </div>
       </div>
     </div>
